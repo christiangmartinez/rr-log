@@ -1,30 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.MainActivity">
 
     <android.support.v7.widget.Toolbar
+        android:id="@+id/workout_toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        android:id="@+id/workout_toolbar"
-        >
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
         <TextView
+            android:id="@+id/current_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/current_date"
-            android:text="01/24/1990"
+            android:text="00/00/0000"
             android:textAlignment="center"
             android:textColor="#fff"
-            android:textSize="20sp"
-            />
+            android:textSize="20sp" />
     </android.support.v7.widget.Toolbar>
 
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/workout_toolbar"
+        tools:layout_editor_absoluteX="125dp"
+        android:scrollbars="none">
 
-</RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/second_pair"
+                android:layout_width="375dp"
+                android:layout_height="400dp"
+                android:layout_below="@+id/workout_toolbar"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/first_pair"
+                app:cardCornerRadius="4dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Chyehchyehchyeh" />
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/first_pair"
+                android:layout_width="375dp"
+                android:layout_height="400dp"
+                android:layout_marginLeft="10dp"
+                app:cardCornerRadius="4dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Yoyoyoyo" />
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/third_pair"
+                android:layout_width="375dp"
+                android:layout_height="400dp"
+                android:layout_below="@+id/workout_toolbar"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/second_pair"
+                app:cardCornerRadius="4dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Buoahbuoahbuoah" />
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+</android.support.constraint.ConstraintLayout>
