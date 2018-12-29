@@ -5,4 +5,11 @@
     <string name="sample_weight">205</string>
     <string name="pounds">lbs</string>
     <string name="kilos">kgs</string>
+    <string-array name="pull_array">
+        <item>Scapular pulls</item>
+        <item>Arch hangs</item>
+        <item>Pull-up negatives</item>
+        <item>Pull-ups</item>
+        <item>Weighted pull-ups</item>
+    </string-array>
 </resources>
