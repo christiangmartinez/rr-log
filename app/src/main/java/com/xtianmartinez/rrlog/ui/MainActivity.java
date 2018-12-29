@@ -34,7 +34,5 @@ public class MainActivity extends AppCompatActivity {
         dateFormat = new SimpleDateFormat( "MM/dd/yyyy");
         date = dateFormat.format(calendar.getTime());
         currentDate.setText(date);
-        HorizontalScrollView formScroll = (HorizontalScrollView)findViewById(R.id.form_scroll);
-        formScroll.scrollTo(0,0);
     }
 }
