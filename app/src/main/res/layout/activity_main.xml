@@ -19,7 +19,7 @@
             android:id="@+id/current_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="00/00/0000"
+            android:text="@string/current_date"
             android:textAlignment="center"
             android:textColor="#fff"
             android:textSize="20sp" />
@@ -27,59 +27,118 @@
 
     <HorizontalScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="532dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:scrollbars="none"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/workout_toolbar"
-        tools:layout_editor_absoluteX="125dp"
-        android:scrollbars="none">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.756">
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent">
 
             <android.support.v7.widget.CardView
-                android:id="@+id/second_pair"
-                android:layout_width="375dp"
-                android:layout_height="400dp"
-                android:layout_below="@+id/workout_toolbar"
-                android:layout_marginLeft="10dp"
-                android:layout_toRightOf="@id/first_pair"
+                android:id="@+id/first_pair"
+                android:layout_width="370dp"
+                android:layout_height="450dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="0dp"
                 app:cardCornerRadius="4dp">
 
-                <TextView
+                <android.support.constraint.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="Chyehchyehchyeh" />
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/body_weight_label"
+                        android:layout_width="109dp"
+                        android:layout_height="79dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="@string/body_weight"
+                        android:textSize="15sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <EditText
+                        android:id="@+id/editText"
+                        android:layout_width="73dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:hint="@string/sample_weight"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textSize="15sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.69"
+                        app:layout_constraintStart_toEndOf="@+id/body_weight_label"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <TextView
+                        android:id="@+id/weight_unit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="@string/kilos"
+                        android:textSize="15sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toEndOf="@+id/editText"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.01999998" />
+
+                </android.support.constraint.ConstraintLayout>
+
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
-                android:id="@+id/first_pair"
-                android:layout_width="375dp"
-                android:layout_height="400dp"
-                android:layout_marginLeft="10dp"
+                android:id="@+id/second_pair"
+                android:layout_width="370dp"
+                android:layout_height="450dp"
+                android:layout_marginStart="10dp"
                 app:cardCornerRadius="4dp">
 
-                <TextView
+                <android.support.constraint.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="Yoyoyoyo" />
+                    android:layout_height="match_parent">
+
+                </android.support.constraint.ConstraintLayout>
+
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
                 android:id="@+id/third_pair"
-                android:layout_width="375dp"
-                android:layout_height="400dp"
-                android:layout_below="@+id/workout_toolbar"
-                android:layout_marginLeft="10dp"
-                android:layout_toRightOf="@id/second_pair"
+                android:layout_width="370dp"
+                android:layout_height="450dp"
+                android:layout_marginStart="10dp"
                 app:cardCornerRadius="4dp">
 
-                <TextView
+                <android.support.constraint.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="Buoahbuoahbuoah" />
+                    android:layout_height="match_parent">
+
+
+                </android.support.constraint.ConstraintLayout>
+
             </android.support.v7.widget.CardView>
         </LinearLayout>
 

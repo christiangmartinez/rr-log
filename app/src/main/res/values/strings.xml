@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">RR Log</string>
+    <string name="current_date">00/00/0000</string>
+    <string name="body_weight">Body weight</string>
+    <string name="sample_weight">205</string>
+    <string name="pounds">lbs</string>
+    <string name="kilos">kgs</string>
 </resources>
