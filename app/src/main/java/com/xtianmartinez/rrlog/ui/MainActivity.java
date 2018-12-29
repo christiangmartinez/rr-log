@@ -5,6 +5,8 @@ import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.WindowManager;
+import android.widget.HorizontalScrollView;
 import android.widget.TextView;
 import android.support.v7.widget.Toolbar;
 
@@ -32,5 +34,7 @@ public class MainActivity extends AppCompatActivity {
         dateFormat = new SimpleDateFormat( "MM/dd/yyyy");
         date = dateFormat.format(calendar.getTime());
         currentDate.setText(date);
+        HorizontalScrollView formScroll = (HorizontalScrollView)findViewById(R.id.form_scroll);
+        formScroll.scrollTo(0,0);
     }
 }
