@@ -11,7 +11,7 @@ public class Workout {
     public String workoutDate;
 
     @ColumnInfo(name = "body_weight")
-    public int bodyWeight;
+    public String bodyWeight;
 
     @ColumnInfo(name = "pull_progression")
     public String pullProgression;

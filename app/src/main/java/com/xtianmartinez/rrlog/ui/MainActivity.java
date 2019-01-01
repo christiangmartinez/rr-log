@@ -51,8 +51,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             @Override
             public void onClick(View view) {
                 String workoutDate = currentDate.getText().toString();
-                int bodyWeight = Integer.parseInt(userWeight.getText().toString());
+                String bodyWeight = userWeight.getText().toString();
                 String pullProgression = pullSpinner.getSelectedItem().toString();
+                boolean validEntry = isValidEntry(bodyWeight);
+                if(!validEntry) return;
                 Toast.makeText(MainActivity.this, workoutDate + " " + bodyWeight + " " + pullProgression, Toast.LENGTH_LONG).show();
             }
         });
@@ -60,12 +62,20 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        String pullProgression = adapterView.getItemAtPosition(i).toString();
-        Toast.makeText(adapterView.getContext(), pullProgression, Toast.LENGTH_SHORT).show();
+
     }
 
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
 
     }
+
+    private boolean isValidEntry(String n) {
+        if(n.equals("")) {
+            userWeight.setError("Enter body weight");
+            return false;
+        }
+        return true;
+    }
+
 }
