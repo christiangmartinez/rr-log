@@ -1,6 +1,7 @@
 package com.xtianmartinez.rrlog.ui;
 
 
+import android.arch.persistence.room.Room;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,23 +15,24 @@ import android.support.v7.widget.Toolbar;
 import android.widget.Toast;
 
 import com.xtianmartinez.rrlog.R;
+import com.xtianmartinez.rrlog.WorkoutDatabase;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+    public static WorkoutDatabase workoutDatabase;
     private TextView currentDate;
     private EditText userWeight;
     private Spinner pullSpinner;
-    public MainActivity() {
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        workoutDatabase = Room.databaseBuilder(getApplicationContext(), WorkoutDatabase.class, "workouts").build();
         Calendar calendar = Calendar.getInstance();
-
         currentDate = findViewById(R.id.current_date);
         userWeight = findViewById(R.id.user_weight);
         Button saveWorkout = findViewById(R.id.save_workout);
