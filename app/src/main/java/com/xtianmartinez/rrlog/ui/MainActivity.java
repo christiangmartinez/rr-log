@@ -21,7 +21,6 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-    public static WorkoutDatabase workoutDatabase;
     private TextView currentDate;
     private EditText userWeight;
     private Spinner pullSpinner;
@@ -31,7 +30,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        workoutDatabase = Room.databaseBuilder(getApplicationContext(), WorkoutDatabase.class, "workouts").build();
         Calendar calendar = Calendar.getInstance();
         currentDate = findViewById(R.id.current_date);
         userWeight = findViewById(R.id.user_weight);
