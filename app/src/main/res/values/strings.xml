@@ -5,6 +5,7 @@
     <string name="sample_weight">205</string>
     <string name="pounds">lbs</string>
     <string name="kilos">kgs</string>
+    <string name="finish_workout">Done!</string>
     <string-array name="pull_array">
         <item>Scapular pulls</item>
         <item>Arch hangs</item>

@@ -26,13 +26,16 @@
     </android.support.v7.widget.Toolbar>
 
     <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="75dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:scrollbars="none">
+        android:layout_marginTop="65dp"
+        android:layout_marginBottom="125dp"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -53,6 +56,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
+                        android:layout_marginStart="8dp"
                         android:text="@string/body_weight"
                         android:textSize="15sp" />
 
@@ -60,8 +64,8 @@
                         android:id="@+id/user_weight"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_toEndOf="@+id/body_weight_label"
                         android:layout_marginStart="175dp"
+                        android:layout_toEndOf="@+id/body_weight_label"
                         android:hint="@string/sample_weight"
                         android:inputType="number" />
 
@@ -70,7 +74,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/body_weight_label"
-                        android:layout_marginTop="30dp"/>
+                        android:layout_marginTop="30dp" />
 
                 </RelativeLayout>
 
@@ -99,5 +103,19 @@
             </android.support.v7.widget.CardView>
         </LinearLayout>
     </HorizontalScrollView>
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/save_workout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/colorPrimary"
+        android:textColor="#fff"
+        android:text="@string/finish_workout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
 
 </android.support.constraint.ConstraintLayout>
