@@ -1,9 +1,12 @@
 package com.xtianmartinez.rrlog.ui;
 
 
+import android.arch.lifecycle.ViewModelProvider;
+import android.arch.lifecycle.ViewModelProviders;
 import android.arch.persistence.room.Room;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -16,11 +19,15 @@ import android.widget.Toast;
 
 import com.xtianmartinez.rrlog.R;
 import com.xtianmartinez.rrlog.WorkoutDatabase;
+import com.xtianmartinez.rrlog.WorkoutViewModel;
+import com.xtianmartinez.rrlog.models.Workout;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+    private static final String TAG = MainActivity.class.getSimpleName();
+    private WorkoutViewModel mWorkoutViewModel;
     private TextView currentDate;
     private EditText userWeight;
     private Spinner pullSpinner;
@@ -29,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mWorkoutViewModel = ViewModelProviders.of(this).get(WorkoutViewModel.class);
 
         Calendar calendar = Calendar.getInstance();
         currentDate = findViewById(R.id.current_date);
@@ -50,11 +58,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         saveWorkout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Log.d(TAG, "onClick: clicked...");
                 String workoutDate = currentDate.getText().toString();
                 String bodyWeight = userWeight.getText().toString();
                 String pullProgression = pullSpinner.getSelectedItem().toString();
                 boolean validEntry = isValidEntry(bodyWeight);
                 if(!validEntry) return;
+                Workout workout = new Workout();
+                mWorkoutViewModel.insert(workout);
                 Toast.makeText(MainActivity.this, workoutDate + " " + bodyWeight + " " + pullProgression, Toast.LENGTH_LONG).show();
             }
         });
