@@ -4,6 +4,8 @@ import android.app.Application;
 import android.arch.lifecycle.LiveData;
 import android.os.AsyncTask;
 
+import com.xtianmartinez.rrlog.db.WorkoutDao;
+import com.xtianmartinez.rrlog.db.WorkoutDatabase;
 import com.xtianmartinez.rrlog.models.Workout;
 
 import java.util.List;

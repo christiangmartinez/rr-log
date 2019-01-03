@@ -1,4 +1,4 @@
-package com.xtianmartinez.rrlog;
+package com.xtianmartinez.rrlog.db;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.persistence.room.Dao;

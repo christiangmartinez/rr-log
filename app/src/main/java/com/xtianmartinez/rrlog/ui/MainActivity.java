@@ -1,9 +1,7 @@
 package com.xtianmartinez.rrlog.ui;
 
 
-import android.arch.lifecycle.ViewModelProvider;
 import android.arch.lifecycle.ViewModelProviders;
-import android.arch.persistence.room.Room;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,7 +16,6 @@ import android.support.v7.widget.Toolbar;
 import android.widget.Toast;
 
 import com.xtianmartinez.rrlog.R;
-import com.xtianmartinez.rrlog.WorkoutDatabase;
 import com.xtianmartinez.rrlog.WorkoutViewModel;
 import com.xtianmartinez.rrlog.models.Workout;
 
