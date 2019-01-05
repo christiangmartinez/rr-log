@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -27,18 +28,16 @@ import java.util.Calendar;
 
 import static android.support.constraint.Constraints.TAG;
 
-public class WorkoutFormFragment extends Fragment {
+public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemSelectedListener {
     private TextView currentDate;
     private EditText userWeight;
-    private Spinner pullSpinner;
+    Spinner pullSpinner;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Calendar calendar = Calendar.getInstance();
-        SimpleDateFormat dateFormat = new SimpleDateFormat( "MM/dd/yyyy");
-        String date = dateFormat.format(calendar.getTime());
-        currentDate.setText(date);
+
+
     }
 
     @Nullable
@@ -48,13 +47,17 @@ public class WorkoutFormFragment extends Fragment {
 
         Toolbar workoutToolbar = v.findViewById(R.id.workout_toolbar);
         ((AppCompatActivity)getActivity()).setSupportActionBar(workoutToolbar);
+        Calendar calendar = Calendar.getInstance();
+        SimpleDateFormat dateFormat = new SimpleDateFormat( "MM/dd/yyyy");
+        String date = dateFormat.format(calendar.getTime());
         currentDate = v.findViewById(R.id.current_date);
+        currentDate.setText(date);
         userWeight = v.findViewById(R.id.user_weight);
         pullSpinner = v.findViewById(R.id.pull_progressions);
         ArrayAdapter<CharSequence> pullAdapter = ArrayAdapter.createFromResource(this.getActivity(), R.array.pull_array, android.R.layout.simple_spinner_item);
         pullAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         pullSpinner.setAdapter(pullAdapter);
-//        pullSpinner.setOnItemSelectedListener(this);
+        pullSpinner.setOnItemSelectedListener(this);
 //        Button saveWorkout = v.findViewById(R.id.save_workout);
 //        saveWorkout.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -87,4 +90,14 @@ public class WorkoutFormFragment extends Fragment {
     }
 
 
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        String pullProgression = adapterView.getItemAtPosition(i).toString();
+       Toast.makeText(adapterView.getContext(), pullProgression, Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
+    }
 }

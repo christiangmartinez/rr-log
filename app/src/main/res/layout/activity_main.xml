@@ -6,12 +6,27 @@
     android:layout_height="match_parent"
     tools:context=".ui.MainActivity">
 
+    <!--<fragment-->
+        <!--android:id="@+id/workout_form_fragment"-->
+        <!--android:name="com.xtianmartinez.rrlog.ui.WorkoutFormFragment"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_marginBottom="32dp"-->
+        <!--app:layout_constraintBottom_toTopOf="@+id/bottom_nav"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--app:layout_constraintStart_toStartOf="parent"-->
+        <!--app:layout_constraintTop_toTopOf="parent" />-->
+
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-
-
+        android:layout_height="match_parent"
+        android:layout_marginBottom="53dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_nav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/bottom_nav"
         android:layout_width="match_parent"
