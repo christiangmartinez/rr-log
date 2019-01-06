@@ -90,18 +90,17 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
             Toast.makeText(getActivity(), "Add body weight", Toast.LENGTH_SHORT).show();
             return;
         }
+        Log.d(TAG, "saveWorkout: function called");
         Intent save = new Intent();
         save.putExtra(EXTRA_WORKOUT_DATE, workoutDate);
         save.putExtra(EXTRA_USER_WEIGHT, bodyWeight);
         save.putExtra(EXTRA_PULL_PROGRESSION, pullProgression);
         getActivity().setResult(Activity.RESULT_OK, save);
-        getActivity().finish();
     }
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        String pullProgression = adapterView.getItemAtPosition(i).toString();
-       Toast.makeText(adapterView.getContext(), pullProgression, Toast.LENGTH_LONG).show();
+
     }
 
     @Override

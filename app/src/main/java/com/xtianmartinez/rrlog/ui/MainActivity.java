@@ -47,9 +47,9 @@ public class MainActivity extends AppCompatActivity {
             String pullProgression = data.getStringExtra(WorkoutFormFragment.EXTRA_PULL_PROGRESSION);
             Workout workout = new Workout(workoutDate, bodyWeight, pullProgression);
             mWorkoutViewModel.insert(workout);
-            Toast.makeText(this, "Workout saved!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Workout saved!", Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(this, "ERROR: Workout not saved", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "ERROR: Workout not saved", Toast.LENGTH_LONG).show();
         }
     }
 
