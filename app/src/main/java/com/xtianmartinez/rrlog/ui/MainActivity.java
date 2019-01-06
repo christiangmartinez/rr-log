@@ -14,17 +14,18 @@ import com.xtianmartinez.rrlog.WorkoutViewModel;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
-    WorkoutViewModel mWorkoutViewModel;
+    private WorkoutViewModel mWorkoutViewModel;
+    public static FragmentManager fragmentManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        FragmentManager fragmentManager = getSupportFragmentManager();
+        mWorkoutViewModel = ViewModelProviders.of(this).get(WorkoutViewModel.class);
+        fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         WorkoutFormFragment fragment = new WorkoutFormFragment();
         Log.d(TAG, "onCreate: Starting...");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mWorkoutViewModel = ViewModelProviders.of(this).get(WorkoutViewModel.class);
         fragmentTransaction.add(R.id.fragment_container, fragment);
         fragmentTransaction.commit();
 

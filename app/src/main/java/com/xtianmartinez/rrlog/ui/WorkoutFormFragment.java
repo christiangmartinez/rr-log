@@ -28,7 +28,7 @@ import java.util.Calendar;
 
 import static android.support.constraint.Constraints.TAG;
 
-public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemSelectedListener {
+public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemSelectedListener, View.OnClickListener {
     private TextView currentDate;
     private EditText userWeight;
     Spinner pullSpinner;
@@ -98,6 +98,11 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
 
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
+
+    }
+
+    @Override
+    public void onClick(View view) {
 
     }
 }
