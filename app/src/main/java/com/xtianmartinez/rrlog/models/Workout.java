@@ -5,27 +5,44 @@ import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
-@Entity(tableName = "workouts")
+@Entity(tableName = "workout_table")
 public class Workout {
 
     @PrimaryKey(autoGenerate = true)
     private int id;
 
     @ColumnInfo(name = "workout_date")
-    public String workoutDate;
+    private String workoutDate;
 
     @ColumnInfo(name = "body_weight")
-    public String bodyWeight;
+    private String bodyWeight;
 
     @ColumnInfo(name = "pull_progression")
-    public String pullProgression;
+    private String pullProgression;
 
-    public int getId() {
-        return id;
+    public Workout(String workoutDate, String bodyWeight, String pullProgression) {
+        this.workoutDate = workoutDate;
+        this.bodyWeight = bodyWeight;
+        this.pullProgression = pullProgression;
     }
 
     public void setId(int id) {
         this.id = id;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public String getWorkoutDate() {
+        return workoutDate;
+    }
+
+    public String getBodyWeight() {
+        return bodyWeight;
+    }
+
+    public String getPullProgression() {
+        return pullProgression;
+    }
 }
