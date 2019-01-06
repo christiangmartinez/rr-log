@@ -6,6 +6,10 @@
     <string name="pounds">lbs</string>
     <string name="kilos">kgs</string>
     <string name="finish_workout">Done!</string>
+    <string name="workout">Workout</string>
+    <string name="progress">Progress</string>
+    <string name="calendar">Calendar</string>
+    <string name="settings">Settings</string>
     <string-array name="pull_array">
         <item>Scapular pulls</item>
         <item>Arch hangs</item>
@@ -13,10 +17,4 @@
         <item>Pull-ups</item>
         <item>Weighted pull-ups</item>
     </string-array>
-    <string name="workout">Workout</string>
-    <string name="progress">Progress</string>
-    <string name="calendar">Calendar</string>
-    <string name="settings">Settings</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -2,11 +2,16 @@ package com.xtianmartinez.rrlog.ui;
 
 
 import android.arch.lifecycle.ViewModelProviders;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
+
 import com.xtianmartinez.rrlog.R;
 import com.xtianmartinez.rrlog.WorkoutViewModel;
 
@@ -15,19 +20,41 @@ import com.xtianmartinez.rrlog.WorkoutViewModel;
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
     private WorkoutViewModel mWorkoutViewModel;
-    public static FragmentManager fragmentManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         mWorkoutViewModel = ViewModelProviders.of(this).get(WorkoutViewModel.class);
-        fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        WorkoutFormFragment fragment = new WorkoutFormFragment();
         Log.d(TAG, "onCreate: Starting...");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        fragmentTransaction.add(R.id.fragment_container, fragment);
-        fragmentTransaction.commit();
 
+        BottomNavigationView bottomNav = findViewById(R.id.bottom_nav);
+        bottomNav.setOnNavigationItemSelectedListener(navListener);
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new WorkoutFormFragment()).commit();
     }
+
+    private BottomNavigationView.OnNavigationItemSelectedListener navListener =
+            new BottomNavigationView.OnNavigationItemSelectedListener() {
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                    Fragment selectedFragment = null;
+                    switch (menuItem.getItemId()) {
+                        case R.id.nav_workout_form:
+                            selectedFragment = new WorkoutFormFragment();
+                            break;
+                        case R.id.nav_progress:
+                            selectedFragment = new ProgressFragment();
+                            break;
+                        case R.id.nav_calendar:
+                            selectedFragment = new CalendarFragment();
+                            break;
+                        case R.id.nav_settings:
+                            selectedFragment = new SettingsFragment();
+                            break;
+                    }
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
+                    return true;
+                }
+            };
 }

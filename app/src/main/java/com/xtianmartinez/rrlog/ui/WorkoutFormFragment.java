@@ -33,6 +33,10 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
     private EditText userWeight;
     Spinner pullSpinner;
 
+    public WorkoutFormFragment() {
+
+    }
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
