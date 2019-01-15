@@ -2,6 +2,7 @@ package com.xtianmartinez.rrlog.ui;
 
 
 import android.arch.lifecycle.Observer;
+import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -14,6 +15,7 @@ import android.view.ViewGroup;
 
 import com.xtianmartinez.rrlog.R;
 import com.xtianmartinez.rrlog.WorkoutListAdapter;
+import com.xtianmartinez.rrlog.WorkoutViewModel;
 import com.xtianmartinez.rrlog.models.Workout;
 
 import java.util.List;
@@ -22,12 +24,17 @@ import java.util.List;
  * A simple {@link Fragment} subclass.
  */
 public class ProgressFragment extends Fragment {
-
+    private WorkoutViewModel mWorkoutViewModel;
 
     public ProgressFragment() {
         // Required empty public constructor
     }
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mWorkoutViewModel = ViewModelProviders.of(getActivity()).get(WorkoutViewModel.class);
+    }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
