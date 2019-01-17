@@ -38,7 +38,7 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
     private TextView currentDate;
     private EditText userWeight;
     private Spinner pullSpinner;
-    private Button saveWorkout;
+    private Button saveWorkoutButton;
 
     public WorkoutFormFragment() {
 
@@ -69,9 +69,9 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
         pullAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         pullSpinner.setAdapter(pullAdapter);
         pullSpinner.setOnItemSelectedListener(this);
-        saveWorkout = v.findViewById(R.id.save_workout);
+        saveWorkoutButton = v.findViewById(R.id.save_workout);
 
-        saveWorkout.setOnClickListener(new View.OnClickListener() {
+        saveWorkoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Log.d(TAG, "onClick: done! button clicked...");
@@ -87,6 +87,7 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
         String bodyWeight = userWeight.getText().toString();
         String pullProgression = pullSpinner.getSelectedItem().toString();
         if (bodyWeight.trim().isEmpty()) {
+            Log.d(TAG, "saveWorkout: field empty, save FAIL");
             Toast.makeText(getActivity(), "Add body weight", Toast.LENGTH_SHORT).show();
             return;
         }

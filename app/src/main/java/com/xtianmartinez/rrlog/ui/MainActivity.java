@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == WORKOUT_FORM_FRAGMENT_REQUEST_CODE && resultCode == RESULT_OK) {
+        if(resultCode == RESULT_OK) {
             String workoutDate = data.getStringExtra(WorkoutFormFragment.EXTRA_WORKOUT_DATE);
             String bodyWeight = data.getStringExtra(WorkoutFormFragment.EXTRA_USER_WEIGHT);
             String pullProgression = data.getStringExtra(WorkoutFormFragment.EXTRA_PULL_PROGRESSION);

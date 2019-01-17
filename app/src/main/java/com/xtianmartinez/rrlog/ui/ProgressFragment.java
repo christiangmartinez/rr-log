@@ -40,9 +40,10 @@ public class ProgressFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_progress, container, false);
         RecyclerView recyclerView = v.findViewById(R.id.workout_recyclerview);
-        final WorkoutListAdapter adapter = new WorkoutListAdapter(getContext());
+
+        final WorkoutListAdapter adapter = new WorkoutListAdapter(getActivity());
         recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         mWorkoutViewModel.getAllWorkouts().observe(this, new Observer<List<Workout>>() {
             @Override
