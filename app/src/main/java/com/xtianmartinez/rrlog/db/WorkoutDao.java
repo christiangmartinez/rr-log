@@ -15,7 +15,7 @@ public interface WorkoutDao {
     @Insert
     void insert(Workout workout);
 
-    @Query("SELECT * from workouts ORDER BY id DESC")
+    @Query("SELECT * from workout_table ORDER BY id DESC")
     LiveData<List<Workout>> getAllWorkouts();
 
 }

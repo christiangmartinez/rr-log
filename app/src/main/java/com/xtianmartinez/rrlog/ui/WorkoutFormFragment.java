@@ -1,6 +1,8 @@
 package com.xtianmartinez.rrlog.ui;
 
+import android.app.Activity;
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -29,9 +31,14 @@ import java.util.Calendar;
 import static android.support.constraint.Constraints.TAG;
 
 public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemSelectedListener, View.OnClickListener {
+    public static final String EXTRA_WORKOUT_DATE = "com.xtianmartinez.rrlog.ui.EXTRA_WORKOUT_DATE";
+    public static final String EXTRA_USER_WEIGHT = "com.xtianmartinez.rrlog.ui.EXTRA_USER_WEIGHT";
+    public static final String EXTRA_PULL_PROGRESSION = "com.xtianmartinez.rrlog.ui.EXTRA_PULL_PROGRESSION";
+
     private TextView currentDate;
     private EditText userWeight;
-    Spinner pullSpinner;
+    private Spinner pullSpinner;
+    private Button saveWorkoutButton;
 
     public WorkoutFormFragment() {
 
@@ -40,8 +47,6 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
     }
 
     @Nullable
@@ -56,48 +61,47 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
         String date = dateFormat.format(calendar.getTime());
         currentDate = v.findViewById(R.id.current_date);
         currentDate.setText(date);
+
         userWeight = v.findViewById(R.id.user_weight);
+
         pullSpinner = v.findViewById(R.id.pull_progressions);
         ArrayAdapter<CharSequence> pullAdapter = ArrayAdapter.createFromResource(this.getActivity(), R.array.pull_array, android.R.layout.simple_spinner_item);
         pullAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         pullSpinner.setAdapter(pullAdapter);
         pullSpinner.setOnItemSelectedListener(this);
-//        Button saveWorkout = v.findViewById(R.id.save_workout);
-//        saveWorkout.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Log.d(TAG, "onClick: clicked...");
-//                String workoutDate = currentDate.getText().toString();
-//                String bodyWeight = userWeight.getText().toString();
-//                String pullProgression = pullSpinner.getSelectedItem().toString();
-//                boolean validEntry = isValidEntry(bodyWeight);
-//                if(!validEntry) return;
-//                Workout workout = new Workout();
-//                mWorkoutViewModel.insert(workout);
-//                Toast.makeText(MainActivity.this, workoutDate + " " + bodyWeight + " " + pullProgression, Toast.LENGTH_LONG).show();
-//            }
-//        });
+        saveWorkoutButton = v.findViewById(R.id.save_workout);
+
+        saveWorkoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d(TAG, "onClick: done! button clicked...");
+                saveWorkout();
+            }
+        });
+
         return v;
     }
 
-    @Override
-    public void onPause() {
-        super.onPause();
-    }
-
-    private boolean isValidEntry(String n) {
-        if(n.equals("")) {
-            userWeight.setError("Enter body weight");
-            return false;
+    public void saveWorkout() {
+        String workoutDate = currentDate.getText().toString();
+        String bodyWeight = userWeight.getText().toString();
+        String pullProgression = pullSpinner.getSelectedItem().toString();
+        if (bodyWeight.trim().isEmpty()) {
+            Log.d(TAG, "saveWorkout: field empty, save FAIL");
+            Toast.makeText(getActivity(), "Add body weight", Toast.LENGTH_SHORT).show();
+            return;
         }
-        return true;
+        Log.d(TAG, "saveWorkout: function called");
+        Intent save = new Intent();
+        save.putExtra(EXTRA_WORKOUT_DATE, workoutDate);
+        save.putExtra(EXTRA_USER_WEIGHT, bodyWeight);
+        save.putExtra(EXTRA_PULL_PROGRESSION, pullProgression);
+        getActivity().setResult(Activity.RESULT_OK, save);
     }
-
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        String pullProgression = adapterView.getItemAtPosition(i).toString();
-       Toast.makeText(adapterView.getContext(), pullProgression, Toast.LENGTH_LONG).show();
+
     }
 
     @Override

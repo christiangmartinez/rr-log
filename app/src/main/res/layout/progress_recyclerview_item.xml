@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/progressDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/current_date"
+                android:textSize="15sp"/>
+            <TextView
+                android:id="@+id/progressBodyWeight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/sample_weight"
+                android:textSize="15sp"
+                android:layout_below="@id/progressDate"/>
+            <TextView
+                android:id="@+id/progressPullProgression"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/progress"
+                android:textSize="15sp"
+                android:layout_below="@id/progressBodyWeight"/>
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>
