@@ -24,7 +24,7 @@ import java.util.List;
  * A simple {@link Fragment} subclass.
  */
 public class ProgressFragment extends Fragment {
-    private WorkoutViewModel mWorkoutViewModel;
+    private WorkoutViewModel workoutViewModel;
 
     public ProgressFragment() {
         // Required empty public constructor
@@ -33,7 +33,7 @@ public class ProgressFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mWorkoutViewModel = ViewModelProviders.of(getActivity()).get(WorkoutViewModel.class);
+        workoutViewModel = ViewModelProviders.of(getActivity()).get(WorkoutViewModel.class);
     }
 
     @Override
@@ -45,7 +45,7 @@ public class ProgressFragment extends Fragment {
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        mWorkoutViewModel.getAllWorkouts().observe(this, new Observer<List<Workout>>() {
+        workoutViewModel.getAllWorkouts().observe(this, new Observer<List<Workout>>() {
             @Override
             public void onChanged(@Nullable final List<Workout> workouts) {
                 adapter.setWorkouts(workouts);

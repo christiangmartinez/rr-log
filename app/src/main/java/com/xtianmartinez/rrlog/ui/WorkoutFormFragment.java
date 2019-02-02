@@ -1,8 +1,6 @@
 package com.xtianmartinez.rrlog.ui;
 
-import android.app.Activity;
 import android.arch.lifecycle.ViewModelProviders;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -31,9 +29,7 @@ import java.util.Calendar;
 import static android.support.constraint.Constraints.TAG;
 
 public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemSelectedListener, View.OnClickListener {
-    public static final String EXTRA_WORKOUT_DATE = "com.xtianmartinez.rrlog.ui.EXTRA_WORKOUT_DATE";
-    public static final String EXTRA_USER_WEIGHT = "com.xtianmartinez.rrlog.ui.EXTRA_USER_WEIGHT";
-    public static final String EXTRA_PULL_PROGRESSION = "com.xtianmartinez.rrlog.ui.EXTRA_PULL_PROGRESSION";
+   private WorkoutViewModel workoutViewModel;
 
     private TextView currentDate;
     private EditText userWeight;
@@ -47,6 +43,7 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        workoutViewModel = ViewModelProviders.of(getActivity()).get(WorkoutViewModel.class);
     }
 
     @Nullable
@@ -92,11 +89,8 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
             return;
         }
         Log.d(TAG, "saveWorkout: function called");
-        Intent save = new Intent();
-        save.putExtra(EXTRA_WORKOUT_DATE, workoutDate);
-        save.putExtra(EXTRA_USER_WEIGHT, bodyWeight);
-        save.putExtra(EXTRA_PULL_PROGRESSION, pullProgression);
-        getActivity().setResult(Activity.RESULT_OK, save);
+        Workout workout = new Workout(workoutDate, bodyWeight, pullProgression);
+        workoutViewModel.insert(workout);
     }
 
     @Override
