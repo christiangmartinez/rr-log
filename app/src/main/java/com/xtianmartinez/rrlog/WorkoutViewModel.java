@@ -8,7 +8,7 @@ import com.xtianmartinez.rrlog.models.Workout;
 
 import java.util.List;
 
-public class WorkoutViewModel extends AndroidViewModel {
+public class    WorkoutViewModel extends AndroidViewModel {
     private WorkoutRepository mRepository;
     private LiveData<List<Workout>> mAllWorkouts;
 
@@ -18,7 +18,7 @@ public class WorkoutViewModel extends AndroidViewModel {
         mAllWorkouts = mRepository.getmAllWorkouts();
     }
 
-    LiveData<List<Workout>> getAllWorkouts() {return mAllWorkouts;}
+    public LiveData<List<Workout>> getAllWorkouts() {return mAllWorkouts;}
 
     public void insert(Workout workout) {mRepository.insert(workout);}
 

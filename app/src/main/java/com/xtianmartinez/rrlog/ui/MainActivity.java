@@ -1,29 +1,20 @@
 package com.xtianmartinez.rrlog.ui;
 
 
-import android.arch.lifecycle.ViewModelProviders;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
-
 import com.xtianmartinez.rrlog.R;
-import com.xtianmartinez.rrlog.WorkoutViewModel;
-
-
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
-    private WorkoutViewModel mWorkoutViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        mWorkoutViewModel = ViewModelProviders.of(this).get(WorkoutViewModel.class);
         Log.d(TAG, "onCreate: Starting...");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -33,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new WorkoutFormFragment()).commit();
     }
+
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
