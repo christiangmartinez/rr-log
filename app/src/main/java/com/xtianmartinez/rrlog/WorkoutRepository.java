@@ -20,7 +20,7 @@ public class WorkoutRepository {
         mAllWorkouts = mWorkoutDao.getAllWorkouts();
     }
 
-    LiveData<List<Workout>> getmAllWorkouts() {
+    LiveData<List<Workout>> getAllWorkouts() {
         return mAllWorkouts;
     }
 
