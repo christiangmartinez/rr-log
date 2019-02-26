@@ -17,4 +17,41 @@
         <item>Pull-ups</item>
         <item>Weighted pull-ups</item>
     </string-array>
+    <string-array name="squat_array">
+        <item>Assisted squat</item>
+        <item>Squat</item>
+        <item>Split squat</item>
+        <item>Bulgarian split squat</item>
+        <item>Shrimp squat</item>
+        <item>Weighted shrimp squat</item>
+        <item>Barbell squat</item>
+    </string-array>
+    <string-array name="dip_array">
+        <item>Parallel bar support hold</item>
+        <item>Negative dips</item>
+        <item>Parallel bar dips</item>
+        <item>Weighted dips</item>
+    </string-array>
+    <string-array name="hinge_array">
+        <item>Romanian deadlift</item>
+        <item>Single leg deadlift</item>
+        <item>Banded nordic curl negatives</item>
+        <item>Banded nordics curls</item>
+        <item>Nordic curls</item>
+        <item>Barbell deadlift</item>
+    </string-array>
+    <string-array name="row_array">
+       <item>Vertical rows</item>
+        <item>Incline rows</item>
+        <item>Horizontal rows</item>
+        <item>Wide rows</item>
+        <item>Weighted inverted rows</item>
+    </string-array>
+    <string-array name="pushup_array">
+        <item>Vertical pushup</item>
+        <item>Incline pushup</item>
+        <item>Full pushup</item>
+        <item>Diamond pushup</item>
+        <item>Pseudo planche pushup</item>
+    </string-array>
 </resources>

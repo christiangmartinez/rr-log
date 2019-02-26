@@ -68,13 +68,13 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
         pullSpinner.setOnItemSelectedListener(this);
         saveWorkoutButton = v.findViewById(R.id.save_workout);
 
-        saveWorkoutButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.d(TAG, "onClick: done! button clicked...");
-                saveWorkout();
-            }
-        });
+//        saveWorkoutButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Log.d(TAG, "onClick: done! button clicked...");
+//                saveWorkout();
+//            }
+//        });
 
         return v;
     }
@@ -89,8 +89,8 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
             return;
         }
         Log.d(TAG, "saveWorkout: function called");
-        Workout workout = new Workout(workoutDate, bodyWeight, pullProgression);
-        workoutViewModel.insert(workout);
+//        Workout workout = new Workout(workoutDate, bodyWeight, pullProgression);
+//        workoutViewModel.insert(workout);
     }
 
     @Override
