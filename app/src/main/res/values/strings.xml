@@ -54,4 +54,8 @@
         <item>Diamond pushup</item>
         <item>Pseudo planche pushup</item>
     </string-array>
+    <string-array name="anti_extension_array">
+        <item>Plank</item>
+        <item>Ring ab rollouts</item>
+    </string-array>
 </resources>
