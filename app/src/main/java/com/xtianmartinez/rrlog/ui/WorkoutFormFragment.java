@@ -34,6 +34,13 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
     private TextView currentDate;
     private EditText userWeight;
     private Spinner pullSpinner;
+    private EditText pullSet1;
+    private EditText pullSet2;
+    private EditText pullSet3;
+    private Spinner squatSpinner;
+    private EditText squatSet1;
+    private EditText squatSet2;
+    private EditText squatSet3;
     private Button saveWorkoutButton;
 
     public WorkoutFormFragment() {
@@ -67,6 +74,13 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
         pullSpinner.setAdapter(pullAdapter);
         pullSpinner.setOnItemSelectedListener(this);
         saveWorkoutButton = v.findViewById(R.id.save_workout);
+
+        squatSpinner = v.findViewById(R.id.squat_progressions);
+        ArrayAdapter<CharSequence> squatAdapter = ArrayAdapter.createFromResource(this.getActivity(), R.array.squat_array, android.R.layout.simple_spinner_item);
+        squatAdapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
+        squatSpinner.setAdapter(squatAdapter);
+        squatSpinner.setOnItemSelectedListener(this);
+
 
 //        saveWorkoutButton.setOnClickListener(new View.OnClickListener() {
 //            @Override

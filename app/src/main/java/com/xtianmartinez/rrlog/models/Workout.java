@@ -99,7 +99,7 @@ public class Workout {
     @ColumnInfo(name = "extension_set_3")
     private int extensionSet3;
 
-    public Workout(String workoutDate, String bodyWeight, String pullProgression, int pullSet1, int pullSet2, int pullSet3, String squatProgression, int squatSet1, int squatSet2, int squatSet3, String dipProgression, int dipSet1, int dipSet2, int dipSet3, String hingeProgression, int hingeSet1, int hingeSet2, int hingeSet3, String rowProgression, int rowSet1, int rowSet2, int rowSet3, String pushupProgression, int pushupSet1, int pushupSet2, int pushupSet3, String antiExtensionProgression, int antiExtensionSet1, int antiExtensionSet2, int antiExtenstionSet3, String antiRotationProgression, int antiRotationSet1, int antiRotationSet2, int antiRotationSet3, String extensionProgression, int extensionSet1, int extensionSet2, int extensionSet3) {
+    public Workout(String workoutDate, String bodyWeight, String pullProgression, int pullSet1, int pullSet2, int pullSet3, String squatProgression, int squatSet1, int squatSet2, int squatSet3, String dipProgression, int dipSet1, int dipSet2, int dipSet3, String hingeProgression, int hingeSet1, int hingeSet2, int hingeSet3, String rowProgression, int rowSet1, int rowSet2, int rowSet3, String pushupProgression, int pushupSet1, int pushupSet2, int pushupSet3, String antiExtensionProgression, int antiExtensionSet1, int antiExtensionSet2, int antiExtensionSet3, String antiRotationProgression, int antiRotationSet1, int antiRotationSet2, int antiRotationSet3, String extensionProgression, int extensionSet1, int extensionSet2, int extensionSet3) {
         this.workoutDate = workoutDate;
         this.bodyWeight = bodyWeight;
         this.pullProgression = pullProgression;
@@ -129,7 +129,7 @@ public class Workout {
         this.antiExtensionProgression = antiExtensionProgression;
         this.antiExtensionSet1 = antiExtensionSet1;
         this.antiExtensionSet2 = antiExtensionSet2;
-        this.antiExtensionSet3 = antiExtenstionSet3;
+        this.antiExtensionSet3 = antiExtensionSet3;
         this.antiRotationProgression = antiRotationProgression;
         this.antiRotationSet1 = antiRotationSet1;
         this.antiRotationSet2 = antiRotationSet2;
