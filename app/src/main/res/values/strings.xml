@@ -2,7 +2,7 @@
     <string name="app_name">RR Log</string>
     <string name="current_date">00/00/0000</string>
     <string name="body_weight">Body weight</string>
-    <string name="sample_weight">205</string>
+    <string name="sample_weight">000</string>
     <string name="pounds">lbs</string>
     <string name="kilos">kgs</string>
     <string name="finish_workout">Done!</string>
@@ -58,4 +58,6 @@
         <item>Plank</item>
         <item>Ring ab rollouts</item>
     </string-array>
+    <string name="anti_rotation">Banded pallof press</string>
+    <string name="extension">Reverse hyperextension</string>
 </resources>
