@@ -44,7 +44,7 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
     private EditText squatSet3;
 
     private Spinner dipSpinner;
-    private EditText dipsSet1;
+    private EditText dipSet1;
     private EditText dipSet2;
     private EditText dipSet3;
 
@@ -126,7 +126,7 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
         dipAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         dipSpinner.setAdapter(dipAdapter);
         dipSpinner.setOnItemSelectedListener(this);
-        dipsSet1 = v.findViewById(R.id.dip_set_1);
+        dipSet1 = v.findViewById(R.id.dip_set_1);
         dipSet2 = v.findViewById(R.id.dip_set_2);
         dipSet3 = v.findViewById(R.id.dip_set_3);
 
@@ -179,7 +179,7 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
         saveWorkoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d(TAG, "onClick: done! button clicked...");
+                Log.d(TAG, "onClick: Done! button clicked...");
                 saveWorkout();
             }
         });
@@ -191,14 +191,87 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
         String workoutDate = currentDate.getText().toString();
         String bodyWeight = userWeight.getText().toString();
         String pullProgression = pullSpinner.getSelectedItem().toString();
+        int pullReps1 = Integer.parseInt(pullSet1.getText().toString());
+        int pullReps2 = Integer.parseInt(pullSet2.getText().toString());
+        int pullReps3 = Integer.parseInt(pullSet3.getText().toString());
+        String squatProgression = squatSpinner.getSelectedItem().toString();
+        int squatReps1 = Integer.parseInt(squatSet1.getText().toString());
+        int squatReps2 = Integer.parseInt(squatSet2.getText().toString());
+        int squatReps3 = Integer.parseInt(squatSet3.getText().toString());
+        String dipProgression = dipSpinner.getSelectedItem().toString();
+        int dipReps1 = Integer.parseInt(dipSet1.getText().toString());
+        int dipReps2 = Integer.parseInt(dipSet2.getText().toString());
+        int dipReps3 = Integer.parseInt(dipSet3.getText().toString());
+        String hingeProgression = hingeSpinner.getSelectedItem().toString();
+        int hingeReps1 = Integer.parseInt(hingeSet1.getText().toString());
+        int hingeReps2 = Integer.parseInt(hingeSet2.getText().toString());
+        int hingeReps3 = Integer.parseInt(hingeSet3.getText().toString());
+        String rowProgression = rowSpinner.getSelectedItem().toString();
+        int rowReps1 = Integer.parseInt(rowSet1.getText().toString());
+        int rowReps2 = Integer.parseInt(rowSet2.getText().toString());
+        int rowReps3 = Integer.parseInt(rowSet3.getText().toString());
+        String pushupProgression = pushupSpinner.getSelectedItem().toString();
+        int pushupReps1 = Integer.parseInt(pushupSet1.getText().toString());
+        int pushupReps2 = Integer.parseInt(pushupSet2.getText().toString());
+        int pushupReps3 = Integer.parseInt(pushupSet3.getText().toString());
+        String antiExtensionProgression = antiExtensionSpinner.getSelectedItem().toString();
+        int antiExtensionReps1 = Integer.parseInt(antiExtensionSet1.getText().toString());
+        int antiExtensionReps2 = Integer.parseInt(antiExtensionSet2.getText().toString());
+        int antiExtensionReps3 = Integer.parseInt(antiExtensionSet3.getText().toString());
+        String antiRotationProgression = "Banded pallof press";
+        int antiRotationReps1 = Integer.parseInt(antiRotationSet1.getText().toString());
+        int antiRotationReps2 = Integer.parseInt(antiRotationSet2.getText().toString());
+        int antiRotationReps3 = Integer.parseInt(antiRotationSet3.getText().toString());
+        String extensionProgression = "Reverse hyperextension";
+        int extensionReps1 = Integer.parseInt(extensionSet1.getText().toString());
+        int extensionReps2 = Integer.parseInt(extensionSet2.getText().toString());
+        int extensionReps3 = Integer.parseInt(extensionSet3.getText().toString());
+
         if (bodyWeight.trim().isEmpty()) {
             Log.d(TAG, "saveWorkout: field empty, save FAIL");
             Toast.makeText(getActivity(), "Add body weight", Toast.LENGTH_SHORT).show();
             return;
         }
         Log.d(TAG, "saveWorkout: function called");
-//        Workout workout = new Workout(workoutDate, bodyWeight, pullProgression);
-//        workoutViewModel.insert(workout);
+        Workout workout = new Workout(workoutDate,
+                bodyWeight,
+                pullProgression,
+                pullReps1,
+                pullReps2,
+                pullReps3,
+                squatProgression,
+                squatReps1,
+                squatReps2,
+                squatReps3,
+                dipProgression,
+                dipReps1,
+                dipReps2,
+                dipReps3,
+                hingeProgression,
+                hingeReps1,
+                hingeReps2,
+                hingeReps3,
+                rowProgression,
+                rowReps1,
+                rowReps2,
+                rowReps3,
+                pushupProgression,
+                pushupReps1,
+                pushupReps2,
+                pushupReps3,
+                antiExtensionProgression,
+                antiExtensionReps1,
+                antiExtensionReps2,
+                antiExtensionReps3,
+                antiRotationProgression,
+                antiRotationReps1,
+                antiRotationReps2,
+                antiRotationReps3,
+                extensionProgression,
+                extensionReps1,
+                extensionReps2,
+                extensionReps3);
+        workoutViewModel.insert(workout);
     }
 
     @Override
