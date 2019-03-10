@@ -5,6 +5,7 @@
     <string name="sample_weight">000</string>
     <string name="pounds">lbs</string>
     <string name="kilos">kgs</string>
+    <string name="rep_hint">8</string>
     <string name="finish_workout">Done!</string>
     <string name="workout">Workout</string>
     <string name="progress">Progress</string>
