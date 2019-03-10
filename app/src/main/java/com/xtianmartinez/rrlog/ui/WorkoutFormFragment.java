@@ -140,7 +140,7 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
         hingeSet3 = v.findViewById(R.id.hinge_set_3);
 
         rowSpinner = v.findViewById(R.id.row_progressions);
-        ArrayAdapter<CharSequence> rowAdapter = ArrayAdapter.createFromResource(this.getActivity(), R.array.hinge_array, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> rowAdapter = ArrayAdapter.createFromResource(this.getActivity(), R.array.row_array, android.R.layout.simple_spinner_item);
         rowAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         rowSpinner.setAdapter(rowAdapter);
         rowSpinner.setOnItemSelectedListener(this);
