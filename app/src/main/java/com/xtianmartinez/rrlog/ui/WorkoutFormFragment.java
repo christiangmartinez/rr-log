@@ -179,7 +179,8 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
         pullSet1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "It's been clicked!!!", Toast.LENGTH_LONG);
+                Toast.makeText(getActivity(), "It's been clicked!!!", Toast.LENGTH_LONG).show();
+                pullSet1.setText("8");
             }
         });
 
