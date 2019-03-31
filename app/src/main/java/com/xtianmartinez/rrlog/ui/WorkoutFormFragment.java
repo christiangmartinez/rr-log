@@ -190,6 +190,11 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
     public void saveWorkout() {
         String workoutDate = currentDate.getText().toString();
         String bodyWeight = userWeight.getText().toString();
+        if (bodyWeight.trim().isEmpty()) {
+            Log.d(TAG, "saveWorkout: field empty, save FAIL");
+            Toast.makeText(getActivity(), "Add body weight", Toast.LENGTH_SHORT).show();
+            return;
+        }
         String pullProgression = pullSpinner.getSelectedItem().toString();
         int pullReps1 = Integer.parseInt(pullSet1.getText().toString());
         int pullReps2 = Integer.parseInt(pullSet2.getText().toString());
@@ -227,11 +232,6 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
         int extensionReps2 = Integer.parseInt(extensionSet2.getText().toString());
         int extensionReps3 = Integer.parseInt(extensionSet3.getText().toString());
 
-        if (bodyWeight.trim().isEmpty()) {
-            Log.d(TAG, "saveWorkout: field empty, save FAIL");
-            Toast.makeText(getActivity(), "Add body weight", Toast.LENGTH_SHORT).show();
-            return;
-        }
         Log.d(TAG, "saveWorkout: function called");
         Workout workout = new Workout(workoutDate,
                 bodyWeight,
