@@ -2,9 +2,10 @@
     <string name="app_name">RR Log</string>
     <string name="current_date">00/00/0000</string>
     <string name="body_weight">Body weight</string>
-    <string name="sample_weight">205</string>
+    <string name="sample_weight">000</string>
     <string name="pounds">lbs</string>
     <string name="kilos">kgs</string>
+    <string name="rep_hint">8</string>
     <string name="finish_workout">Done!</string>
     <string name="workout">Workout</string>
     <string name="progress">Progress</string>
@@ -17,4 +18,47 @@
         <item>Pull-ups</item>
         <item>Weighted pull-ups</item>
     </string-array>
+    <string-array name="squat_array">
+        <item>Assisted squat</item>
+        <item>Squat</item>
+        <item>Split squat</item>
+        <item>Bulgarian split squat</item>
+        <item>Shrimp squat</item>
+        <item>Weighted shrimp squat</item>
+        <item>Barbell squat</item>
+    </string-array>
+    <string-array name="dip_array">
+        <item>Parallel bar support hold</item>
+        <item>Negative dips</item>
+        <item>Parallel bar dips</item>
+        <item>Weighted dips</item>
+    </string-array>
+    <string-array name="hinge_array">
+        <item>Romanian deadlift</item>
+        <item>Single leg deadlift</item>
+        <item>Banded nordic curl negatives</item>
+        <item>Banded nordics curls</item>
+        <item>Nordic curls</item>
+        <item>Barbell deadlift</item>
+    </string-array>
+    <string-array name="row_array">
+       <item>Vertical rows</item>
+        <item>Incline rows</item>
+        <item>Horizontal rows</item>
+        <item>Wide rows</item>
+        <item>Weighted inverted rows</item>
+    </string-array>
+    <string-array name="pushup_array">
+        <item>Vertical pushup</item>
+        <item>Incline pushup</item>
+        <item>Full pushup</item>
+        <item>Diamond pushup</item>
+        <item>Pseudo planche pushup</item>
+    </string-array>
+    <string-array name="anti_extension_array">
+        <item>Plank</item>
+        <item>Ring ab rollouts</item>
+    </string-array>
+    <string name="anti_rotation">Banded pallof press</string>
+    <string name="extension">Reverse hyperextension</string>
 </resources>

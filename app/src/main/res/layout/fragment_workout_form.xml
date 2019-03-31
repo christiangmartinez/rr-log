@@ -37,7 +37,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -78,29 +78,366 @@
                         android:layout_below="@id/body_weight_label"
                         android:layout_marginTop="30dp" />
 
+                    <EditText
+                        android:id="@+id/pull_set_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/pull_progressions"
+                        android:layout_marginStart="30dp"
+                        android:hint="@string/rep_hint"
+                        android:inputType="number" />
+
+                    <EditText
+                        android:id="@+id/pull_set_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/pull_progressions"
+                        android:layout_marginStart="30dp"
+                        android:layout_toEndOf="@+id/pull_set_1"
+                        android:hint="@string/rep_hint"
+                        android:inputType="number" />
+
+                    <EditText
+                        android:id="@+id/pull_set_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/pull_progressions"
+                        android:layout_marginStart="30dp"
+                        android:layout_toEndOf="@+id/pull_set_2"
+                        android:hint="@string/rep_hint"
+                        android:inputType="number" />
+
+                    <Spinner
+                        android:id="@+id/squat_progressions"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/pull_set_1"
+                        android:layout_marginTop="75dp" />
+
+
+                    <EditText
+                        android:id="@+id/squat_set_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/squat_progressions"
+                        android:layout_marginStart="30dp"
+                        android:hint="@string/rep_hint"
+                        android:inputType="number" />
+
+                    <EditText
+                        android:id="@+id/squat_set_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/squat_progressions"
+                        android:layout_marginStart="30dp"
+                        android:layout_toEndOf="@+id/squat_set_1"
+                        android:hint="@string/rep_hint"
+                        android:inputType="number" />
+
+                    <EditText
+                        android:id="@+id/squat_set_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/squat_progressions"
+                        android:layout_marginStart="30dp"
+                        android:layout_toEndOf="@+id/squat_set_2"
+                        android:hint="@string/rep_hint"
+                        android:inputType="number" />
+
+
                 </RelativeLayout>
 
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
                 android:layout_width="370dp"
-                android:layout_height="450dp"
+                android:layout_height="455dp"
                 android:layout_marginStart="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <Spinner
+                        android:id="@+id/dip_progressions"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp" />
+
+                    <EditText
+                        android:id="@+id/dip_set_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/dip_progressions"
+                        android:layout_marginStart="30dp"
+                        android:hint="@string/rep_hint"
+                        android:inputType="number" />
+
+                    <EditText
+                        android:id="@+id/dip_set_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/dip_progressions"
+                        android:layout_marginStart="30dp"
+                        android:layout_toEndOf="@+id/dip_set_1"
+                        android:hint="@string/rep_hint"
+                        android:inputType="number" />
+
+                    <EditText
+                        android:id="@+id/dip_set_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/dip_progressions"
+                        android:layout_marginStart="30dp"
+                        android:layout_toEndOf="@+id/dip_set_2"
+                        android:hint="@string/rep_hint"
+                        android:inputType="number" />
+
+                    <Spinner
+                        android:id="@+id/hinge_progressions"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/dip_set_1"
+                        android:layout_marginTop="75dp" />
+
+                    <EditText
+                        android:id="@+id/hinge_set_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/hinge_progressions"
+                        android:layout_marginStart="30dp"
+                        android:hint="@string/rep_hint"
+                        android:inputType="number" />
+
+                    <EditText
+                        android:id="@+id/hinge_set_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/hinge_progressions"
+                        android:layout_marginStart="30dp"
+                        android:layout_toEndOf="@+id/hinge_set_1"
+                        android:hint="@string/rep_hint"
+                        android:inputType="number" />
+
+                    <EditText
+                        android:id="@+id/hinge_set_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/hinge_progressions"
+                        android:layout_marginStart="30dp"
+                        android:layout_toEndOf="@+id/hinge_set_2"
+                        android:hint="@string/rep_hint"
+                        android:inputType="number" />
+
+                </RelativeLayout>
 
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
                 android:layout_width="370dp"
-                android:layout_height="450dp"
-                android:layout_marginStart="10dp">
-
-            </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView
-                android:layout_width="370dp"
-                android:layout_height="450dp"
+                android:layout_height="455dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <Spinner
+                        android:id="@+id/row_progressions"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp" />
+
+                    <EditText
+                        android:id="@+id/row_set_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/row_progressions"
+                        android:layout_marginStart="30dp"
+                        android:hint="@string/rep_hint"
+                        android:inputType="number" />
+
+                    <EditText
+                        android:id="@+id/row_set_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/row_progressions"
+                        android:layout_marginStart="30dp"
+                        android:layout_toEndOf="@+id/row_set_1"
+                        android:hint="@string/rep_hint"
+                        android:inputType="number" />
+
+                    <EditText
+                        android:id="@+id/row_set_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/row_progressions"
+                        android:layout_marginStart="30dp"
+                        android:layout_toEndOf="@+id/row_set_2"
+                        android:hint="@string/rep_hint"
+                        android:inputType="number" />
+
+                    <Spinner
+                        android:id="@+id/pushup_progressions"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/row_set_1"
+                        android:layout_marginTop="75dp" />
+
+                    <EditText
+                        android:id="@+id/pushup_set_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/pushup_progressions"
+                        android:layout_marginStart="30dp"
+                        android:hint="@string/rep_hint"
+                        android:inputType="number" />
+
+                    <EditText
+                        android:id="@+id/pushup_set_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/pushup_progressions"
+                        android:layout_marginStart="30dp"
+                        android:layout_toEndOf="@+id/pushup_set_1"
+                        android:hint="@string/rep_hint"
+                        android:inputType="number" />
+
+                    <EditText
+                        android:id="@+id/pushup_set_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/pushup_progressions"
+                        android:layout_marginStart="30dp"
+                        android:layout_toEndOf="@+id/pushup_set_2"
+                        android:hint="@string/rep_hint"
+                        android:inputType="number" />
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="370dp"
+                android:layout_height="455dp"
+                android:layout_marginStart="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <Spinner
+                        android:id="@+id/anti_extension_progressions"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp" />
+
+                    <EditText
+                        android:id="@+id/anti_extension_set_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/anti_extension_progressions"
+                        android:layout_marginStart="30dp"
+                        android:hint="@string/rep_hint"
+                        android:inputType="number" />
+
+                    <EditText
+                        android:id="@+id/anti_extension_set_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/anti_extension_progressions"
+                        android:layout_marginStart="30dp"
+                        android:layout_toEndOf="@+id/anti_extension_set_1"
+                        android:hint="@string/rep_hint"
+                        android:inputType="number" />
+
+                    <EditText
+                        android:id="@+id/anti_extension_set_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/anti_extension_progressions"
+                        android:layout_marginStart="30dp"
+                        android:layout_toEndOf="@+id/anti_extension_set_2"
+                        android:hint="@string/rep_hint"
+                        android:inputType="number" />
+
+                    <TextView
+                        android:id="@+id/anti_rotation_progression"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/anti_extension_set_1"
+                        android:layout_marginTop="30dp"
+                        android:text="@string/anti_rotation" />
+
+                    <EditText
+                        android:id="@+id/anti_rotation_set_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/anti_rotation_progression"
+                        android:layout_marginStart="30dp"
+                        android:hint="@string/rep_hint"
+                        android:inputType="number" />
+
+                    <EditText
+                        android:id="@+id/anti_rotation_set_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/anti_rotation_progression"
+                        android:layout_marginStart="30dp"
+                        android:layout_toEndOf="@+id/anti_rotation_set_1"
+                        android:hint="@string/rep_hint"
+                        android:inputType="number" />
+
+                    <EditText
+                        android:id="@+id/anti_rotation_set_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/anti_rotation_progression"
+                        android:layout_marginStart="30dp"
+                        android:layout_toEndOf="@+id/anti_rotation_set_2"
+                        android:hint="@string/rep_hint"
+                        android:inputType="number" />
+
+
+                    <TextView
+                        android:id="@+id/extension_progression"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/anti_rotation_set_1"
+                        android:layout_marginTop="30dp"
+                        android:text="@string/extension" />
+
+                    <EditText
+                        android:id="@+id/extension_set_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/extension_progression"
+                        android:layout_marginStart="30dp"
+                        android:hint="@string/rep_hint"
+                        android:inputType="number" />
+
+                    <EditText
+                        android:id="@+id/extension_set_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/extension_progression"
+                        android:layout_marginStart="30dp"
+                        android:layout_toEndOf="@+id/extension_set_1"
+                        android:hint="@string/rep_hint"
+                        android:inputType="number" />
+
+                    <EditText
+                        android:id="@+id/extension_set_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/extension_progression"
+                        android:layout_marginStart="30dp"
+                        android:layout_toEndOf="@+id/extension_set_2"
+                        android:hint="@string/rep_hint"
+                        android:inputType="number" />
+
+                </RelativeLayout>
 
             </android.support.v7.widget.CardView>
         </LinearLayout>
