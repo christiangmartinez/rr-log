@@ -34,7 +34,7 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
     private TextView currentDate;
     private EditText userWeight;
     private Spinner pullSpinner;
-    private EditText pullSet1;
+    private TextView pullSet1;
     private EditText pullSet2;
     private EditText pullSet3;
 
@@ -175,6 +175,13 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
         extensionSet3 = v.findViewById(R.id.extension_set_3);
 
         saveWorkoutButton = v.findViewById(R.id.save_workout);
+
+        pullSet1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "It's been clicked!!!", Toast.LENGTH_LONG);
+            }
+        });
 
         saveWorkoutButton.setOnClickListener(new View.OnClickListener() {
             @Override

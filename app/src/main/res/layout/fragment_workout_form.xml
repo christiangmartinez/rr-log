@@ -78,14 +78,20 @@
                         android:layout_below="@id/body_weight_label"
                         android:layout_marginTop="30dp" />
 
-                    <EditText
+                    <TextView
                         android:id="@+id/pull_set_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/pull_progressions"
                         android:layout_marginStart="30dp"
-                        android:hint="@string/rep_hint"
-                        android:inputType="number" />
+                        android:layout_marginTop="20dp"
+                        android:gravity="center"
+                        android:text="X"
+                        android:textSize="18sp"
+                        android:textColor="#FFF"
+                        android:background="@drawable/active_circle"
+                        android:clickable="true"
+                        android:focusable="true"/>
 
                     <EditText
                         android:id="@+id/pull_set_2"
