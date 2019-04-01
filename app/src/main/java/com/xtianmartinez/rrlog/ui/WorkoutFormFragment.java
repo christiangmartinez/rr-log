@@ -104,7 +104,7 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
         userWeight = v.findViewById(R.id.user_weight);
 
         pullSpinner = v.findViewById(R.id.pull_progressions);
-        ArrayAdapter<CharSequence> pullAdapter = ArrayAdapter.createFromResource(this.getActivity(), R.array.pull_array, android.R.layout.simple_spinner_item);
+        final ArrayAdapter<CharSequence> pullAdapter = ArrayAdapter.createFromResource(this.getActivity(), R.array.pull_array, android.R.layout.simple_spinner_item);
         pullAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         pullSpinner.setAdapter(pullAdapter);
         pullSpinner.setOnItemSelectedListener(this);
@@ -180,7 +180,12 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "It's been clicked!!!", Toast.LENGTH_LONG).show();
-                pullSet1.setText("8");
+                int repNumber = Integer.parseInt(pullSet1.getText().toString());
+                if (repNumber == 0) {
+                    pullSet1.setText("8");
+                } else {
+                    pullSet1.setText(String.valueOf(repNumber - 1));
+                }
             }
         });
 
