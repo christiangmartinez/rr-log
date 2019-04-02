@@ -91,7 +91,8 @@
                         android:textColor="#FFF"
                         android:background="@drawable/active_circle"
                         android:clickable="true"
-                        android:focusable="true"/>
+                        android:focusable="true"
+                        android:onClick="countReps"/>
 
                     <EditText
                         android:id="@+id/pull_set_2"

@@ -103,12 +103,13 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
 
         userWeight = v.findViewById(R.id.user_weight);
 
+// First Pair
         pullSpinner = v.findViewById(R.id.pull_progressions);
         final ArrayAdapter<CharSequence> pullAdapter = ArrayAdapter.createFromResource(this.getActivity(), R.array.pull_array, android.R.layout.simple_spinner_item);
         pullAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         pullSpinner.setAdapter(pullAdapter);
-        pullSpinner.setOnItemSelectedListener(this);
         pullSet1 = v.findViewById(R.id.pull_set_1);
+        pullSet1.setOnClickListener(this);
         pullSet2 = v.findViewById(R.id.pull_set_2);
         pullSet3 = v.findViewById(R.id.pull_set_3);
 
@@ -121,6 +122,7 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
         squatSet2 = v.findViewById(R.id.squat_set_2);
         squatSet3 = v.findViewById(R.id.squat_set_3);
 
+// Second Pair
         dipSpinner = v.findViewById(R.id.dip_progressions);
         ArrayAdapter<CharSequence> dipAdapter = ArrayAdapter.createFromResource(this.getActivity(), R.array.dip_array, android.R.layout.simple_spinner_item);
         dipAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -139,6 +141,7 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
         hingeSet2 = v.findViewById(R.id.hinge_set_2);
         hingeSet3 = v.findViewById(R.id.hinge_set_3);
 
+// Third Pair
         rowSpinner = v.findViewById(R.id.row_progressions);
         ArrayAdapter<CharSequence> rowAdapter = ArrayAdapter.createFromResource(this.getActivity(), R.array.row_array, android.R.layout.simple_spinner_item);
         rowAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -157,6 +160,7 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
         pushupSet2 = v.findViewById(R.id.pushup_set_2);
         pushupSet3 = v.findViewById(R.id.pushup_set_3);
 
+// Core Triplet
         antiExtensionSpinner = v.findViewById(R.id.anti_extension_progressions);
         ArrayAdapter<CharSequence> antiExtensionAdapter = ArrayAdapter.createFromResource(this.getActivity(), R.array.anti_extension_array, android.R.layout.simple_spinner_item);
         antiExtensionAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -176,18 +180,19 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
 
         saveWorkoutButton = v.findViewById(R.id.save_workout);
 
-        pullSet1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getActivity(), "It's been clicked!!!", Toast.LENGTH_LONG).show();
-                int repNumber = Integer.parseInt(pullSet1.getText().toString());
-                if (repNumber == 0) {
-                    pullSet1.setText("8");
-                } else {
-                    pullSet1.setText(String.valueOf(repNumber - 1));
-                }
-            }
-        });
+//        pullSet1.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(getActivity(), "It's been clicked!!!", Toast.LENGTH_LONG).show();
+//                int repNumber = Integer.parseInt(pullSet1.getText().toString());
+//                if (repNumber == 0) {
+//                    pullSet1.setText("8");
+//                } else {
+//                    pullSet1.setText(String.valueOf(repNumber - 1));
+//                }
+//            }
+//        });
+
 
         saveWorkoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -299,6 +304,10 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
 
     @Override
     public void onClick(View view) {
-
+        switch (view.getId()) {
+            case R.id.pull_set_1:
+                Toast.makeText(getActivity(), "Yooo it's clicky", Toast.LENGTH_SHORT).show();
+        }
     }
+
 }
