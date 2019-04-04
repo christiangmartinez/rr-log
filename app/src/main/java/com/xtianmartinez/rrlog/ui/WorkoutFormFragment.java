@@ -186,6 +186,15 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
         return v;
     }
 
+    public void countReps(TextView currentSet) {
+        int repNumber = Integer.parseInt(currentSet.getText().toString());
+        if (repNumber == 0) {
+            currentSet.setText("8");
+        } else {
+            currentSet.setText(String.valueOf(repNumber - 1));
+        }
+    }
+
     public void saveWorkout() {
         String workoutDate = currentDate.getText().toString();
         String bodyWeight = userWeight.getText().toString();
@@ -291,33 +300,15 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
                 break;
 
             case R.id.pull_set_1:
-                Toast.makeText(getActivity(), "clicked...", Toast.LENGTH_SHORT).show();
-                int repNumber = Integer.parseInt(pullSet1.getText().toString());
-                if (repNumber == 0) {
-                    pullSet1.setText("8");
-                } else {
-                    pullSet1.setText(String.valueOf(repNumber - 1));
-                }
+                countReps(pullSet1);
                 break;
 
             case R.id.pull_set_2:
-                Toast.makeText(getActivity(), "clicked...", Toast.LENGTH_SHORT).show();
-                int repNumber2 = Integer.parseInt(pullSet2.getText().toString());
-                if (repNumber2 == 0) {
-                    pullSet2.setText("8");
-                } else {
-                    pullSet2.setText(String.valueOf(repNumber2 - 1));
-                }
+                countReps(pullSet2);
                 break;
 
             case R.id.pull_set_3:
-                Toast.makeText(getActivity(), "clicked...", Toast.LENGTH_SHORT).show();
-                int repNumber3 = Integer.parseInt(pullSet3.getText().toString());
-                if (repNumber3 == 0) {
-                    pullSet3.setText("8");
-                } else {
-                    pullSet3.setText(String.valueOf(repNumber3 - 1));
-                }
+                countReps(pullSet3);
                 break;
         }
     }
