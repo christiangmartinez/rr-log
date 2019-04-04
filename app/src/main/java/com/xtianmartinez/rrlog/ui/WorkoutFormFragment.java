@@ -35,8 +35,8 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
     private EditText userWeight;
     private Spinner pullSpinner;
     private TextView pullSet1;
-    private EditText pullSet2;
-    private EditText pullSet3;
+    private TextView pullSet2;
+    private TextView pullSet3;
 
     private Spinner squatSpinner;
     private EditText squatSet1;
@@ -111,7 +111,9 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
         pullSet1 = v.findViewById(R.id.pull_set_1);
         pullSet1.setOnClickListener(this);
         pullSet2 = v.findViewById(R.id.pull_set_2);
+        pullSet2.setOnClickListener(this);
         pullSet3 = v.findViewById(R.id.pull_set_3);
+        pullSet3.setOnClickListener(this);
 
         squatSpinner = v.findViewById(R.id.squat_progressions);
         ArrayAdapter<CharSequence> squatAdapter = ArrayAdapter.createFromResource(this.getActivity(), R.array.squat_array, android.R.layout.simple_spinner_item);
@@ -179,28 +181,7 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
         extensionSet3 = v.findViewById(R.id.extension_set_3);
 
         saveWorkoutButton = v.findViewById(R.id.save_workout);
-
-//        pullSet1.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Toast.makeText(getActivity(), "It's been clicked!!!", Toast.LENGTH_LONG).show();
-//                int repNumber = Integer.parseInt(pullSet1.getText().toString());
-//                if (repNumber == 0) {
-//                    pullSet1.setText("8");
-//                } else {
-//                    pullSet1.setText(String.valueOf(repNumber - 1));
-//                }
-//            }
-//        });
-
-
-        saveWorkoutButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.d(TAG, "onClick: Done! button clicked...");
-                saveWorkout();
-            }
-        });
+        saveWorkoutButton.setOnClickListener(this);
 
         return v;
     }
@@ -305,8 +286,39 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
+            case R.id.save_workout:
+                saveWorkout();
+                break;
+
             case R.id.pull_set_1:
-                Toast.makeText(getActivity(), "Yooo it's clicky", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "clicked...", Toast.LENGTH_SHORT).show();
+                int repNumber = Integer.parseInt(pullSet1.getText().toString());
+                if (repNumber == 0) {
+                    pullSet1.setText("8");
+                } else {
+                    pullSet1.setText(String.valueOf(repNumber - 1));
+                }
+                break;
+
+            case R.id.pull_set_2:
+                Toast.makeText(getActivity(), "clicked...", Toast.LENGTH_SHORT).show();
+                int repNumber2 = Integer.parseInt(pullSet2.getText().toString());
+                if (repNumber2 == 0) {
+                    pullSet2.setText("8");
+                } else {
+                    pullSet2.setText(String.valueOf(repNumber2 - 1));
+                }
+                break;
+
+            case R.id.pull_set_3:
+                Toast.makeText(getActivity(), "clicked...", Toast.LENGTH_SHORT).show();
+                int repNumber3 = Integer.parseInt(pullSet3.getText().toString());
+                if (repNumber3 == 0) {
+                    pullSet3.setText("8");
+                } else {
+                    pullSet3.setText(String.valueOf(repNumber3 - 1));
+                }
+                break;
         }
     }
 

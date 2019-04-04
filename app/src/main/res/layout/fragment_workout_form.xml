@@ -86,33 +86,38 @@
                         android:layout_marginStart="30dp"
                         android:layout_marginTop="20dp"
                         android:gravity="center"
-                        android:text="0"
+                        android:text="@string/rep_hint"
                         android:textSize="18sp"
                         android:textColor="#FFF"
-                        android:background="@drawable/active_circle"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:onClick="countReps"/>
+                        android:background="@drawable/active_circle"/>
 
-                    <EditText
+                    <TextView
                         android:id="@+id/pull_set_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/pull_progressions"
                         android:layout_marginStart="30dp"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center"
                         android:layout_toEndOf="@+id/pull_set_1"
-                        android:hint="@string/rep_hint"
-                        android:inputType="number" />
+                        android:text="@string/rep_hint"
+                        android:textSize="18sp"
+                        android:textColor="#FFF"
+                        android:background="@drawable/active_circle"/>
 
-                    <EditText
+                    <TextView
                         android:id="@+id/pull_set_3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/pull_progressions"
                         android:layout_marginStart="30dp"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center"
                         android:layout_toEndOf="@+id/pull_set_2"
-                        android:hint="@string/rep_hint"
-                        android:inputType="number" />
+                        android:text="@string/rep_hint"
+                        android:textSize="18sp"
+                        android:textColor="#FFF"
+                        android:background="@drawable/active_circle"/>
 
                     <Spinner
                         android:id="@+id/squat_progressions"
