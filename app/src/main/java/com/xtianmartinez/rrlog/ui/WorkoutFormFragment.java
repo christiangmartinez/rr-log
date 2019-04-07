@@ -39,42 +39,42 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
     private TextView pullSet3;
 
     private Spinner squatSpinner;
-    private EditText squatSet1;
-    private EditText squatSet2;
-    private EditText squatSet3;
+    private TextView squatSet1;
+    private TextView squatSet2;
+    private TextView squatSet3;
 
     private Spinner dipSpinner;
-    private EditText dipSet1;
-    private EditText dipSet2;
-    private EditText dipSet3;
+    private TextView dipSet1;
+    private TextView dipSet2;
+    private TextView dipSet3;
 
     private Spinner hingeSpinner;
-    private EditText hingeSet1;
-    private EditText hingeSet2;
-    private EditText hingeSet3;
+    private TextView hingeSet1;
+    private TextView hingeSet2;
+    private TextView hingeSet3;
 
     private Spinner rowSpinner;
-    private EditText rowSet1;
-    private EditText rowSet2;
-    private EditText rowSet3;
+    private TextView rowSet1;
+    private TextView rowSet2;
+    private TextView rowSet3;
 
     private Spinner pushupSpinner;
-    private EditText pushupSet1;
-    private EditText pushupSet2;
-    private EditText pushupSet3;
+    private TextView pushupSet1;
+    private TextView pushupSet2;
+    private TextView pushupSet3;
 
     private Spinner antiExtensionSpinner;
-    private EditText antiExtensionSet1;
-    private EditText antiExtensionSet2;
-    private EditText antiExtensionSet3;
+    private TextView antiExtensionSet1;
+    private TextView antiExtensionSet2;
+    private TextView antiExtensionSet3;
 
-    private EditText antiRotationSet1;
-    private EditText antiRotationSet2;
-    private EditText antiRotationSet3;
+    private TextView antiRotationSet1;
+    private TextView antiRotationSet2;
+    private TextView antiRotationSet3;
 
-    private EditText extensionSet1;
-    private EditText extensionSet2;
-    private EditText extensionSet3;
+    private TextView extensionSet1;
+    private TextView extensionSet2;
+    private TextView extensionSet3;
 
     private Button saveWorkoutButton;
 
@@ -105,7 +105,7 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
 
 // First Pair
         pullSpinner = v.findViewById(R.id.pull_progressions);
-        final ArrayAdapter<CharSequence> pullAdapter = ArrayAdapter.createFromResource(this.getActivity(), R.array.pull_array, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> pullAdapter = ArrayAdapter.createFromResource(this.getActivity(), R.array.pull_array, android.R.layout.simple_spinner_item);
         pullAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         pullSpinner.setAdapter(pullAdapter);
         pullSet1 = v.findViewById(R.id.pull_set_1);
@@ -121,8 +121,11 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
         squatSpinner.setAdapter(squatAdapter);
         squatSpinner.setOnItemSelectedListener(this);
         squatSet1 = v.findViewById(R.id.squat_set_1);
+        squatSet1.setOnClickListener(this);
         squatSet2 = v.findViewById(R.id.squat_set_2);
+        squatSet2.setOnClickListener(this);
         squatSet3 = v.findViewById(R.id.squat_set_3);
+        squatSet3.setOnClickListener(this);
 
 // Second Pair
         dipSpinner = v.findViewById(R.id.dip_progressions);
@@ -131,8 +134,11 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
         dipSpinner.setAdapter(dipAdapter);
         dipSpinner.setOnItemSelectedListener(this);
         dipSet1 = v.findViewById(R.id.dip_set_1);
+        dipSet1.setOnClickListener(this);
         dipSet2 = v.findViewById(R.id.dip_set_2);
+        dipSet2.setOnClickListener(this);
         dipSet3 = v.findViewById(R.id.dip_set_3);
+        dipSet3.setOnClickListener(this);
 
         hingeSpinner = v.findViewById(R.id.hinge_progressions);
         ArrayAdapter<CharSequence> hingeAdapter = ArrayAdapter.createFromResource(this.getActivity(), R.array.hinge_array, android.R.layout.simple_spinner_item);
@@ -140,8 +146,11 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
         hingeSpinner.setAdapter(hingeAdapter);
         hingeSpinner.setOnItemSelectedListener(this);
         hingeSet1 = v.findViewById(R.id.hinge_set_1);
+        hingeSet1.setOnClickListener(this);
         hingeSet2 = v.findViewById(R.id.hinge_set_2);
+        hingeSet2.setOnClickListener(this);
         hingeSet3 = v.findViewById(R.id.hinge_set_3);
+        hingeSet3.setOnClickListener(this);
 
 // Third Pair
         rowSpinner = v.findViewById(R.id.row_progressions);
@@ -150,8 +159,11 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
         rowSpinner.setAdapter(rowAdapter);
         rowSpinner.setOnItemSelectedListener(this);
         rowSet1 = v.findViewById(R.id.row_set_1);
+        rowSet1.setOnClickListener(this);
         rowSet2 = v.findViewById(R.id.row_set_2);
+        rowSet2.setOnClickListener(this);
         rowSet3 = v.findViewById(R.id.row_set_3);
+        rowSet3.setOnClickListener(this);
 
         pushupSpinner = v.findViewById(R.id.pushup_progressions);
         ArrayAdapter<CharSequence> pushupAdapter = ArrayAdapter.createFromResource(this.getActivity(), R.array.pushup_array, android.R.layout.simple_spinner_item);
@@ -159,8 +171,11 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
         pushupSpinner.setAdapter(pushupAdapter);
         pushupSpinner.setOnItemSelectedListener(this);
         pushupSet1 = v.findViewById(R.id.pushup_set_1);
+        pushupSet1.setOnClickListener(this);
         pushupSet2 = v.findViewById(R.id.pushup_set_2);
+        pushupSet2.setOnClickListener(this);
         pushupSet3 = v.findViewById(R.id.pushup_set_3);
+        pushupSet3.setOnClickListener(this);
 
 // Core Triplet
         antiExtensionSpinner = v.findViewById(R.id.anti_extension_progressions);
@@ -169,21 +184,34 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
         antiExtensionSpinner.setAdapter(antiExtensionAdapter);
         antiExtensionSpinner.setOnItemSelectedListener(this);
         antiExtensionSet1 = v.findViewById(R.id.anti_extension_set_1);
+        antiExtensionSet1.setOnClickListener(this);
         antiExtensionSet2 = v.findViewById(R.id.anti_extension_set_2);
+        antiExtensionSet2.setOnClickListener(this);
         antiExtensionSet3 = v.findViewById(R.id.anti_extension_set_3);
+        antiExtensionSet3.setOnClickListener(this);
 
         antiRotationSet1 = v.findViewById(R.id.anti_rotation_set_1);
+        antiRotationSet1.setOnClickListener(this);
         antiRotationSet2 = v.findViewById(R.id.anti_rotation_set_2);
+        antiRotationSet2.setOnClickListener(this);
         antiRotationSet3 = v.findViewById(R.id.anti_rotation_set_3);
+        antiRotationSet3.setOnClickListener(this);
 
         extensionSet1 = v.findViewById(R.id.extension_set_1);
+        extensionSet1.setOnClickListener(this);
         extensionSet2 = v.findViewById(R.id.extension_set_2);
+        extensionSet2.setOnClickListener(this);
         extensionSet3 = v.findViewById(R.id.extension_set_3);
+        extensionSet3.setOnClickListener(this);
 
         saveWorkoutButton = v.findViewById(R.id.save_workout);
         saveWorkoutButton.setOnClickListener(this);
 
         return v;
+    }
+
+    public Integer getTextViewInt(TextView currentView) {
+        return Integer.parseInt(currentView.getText().toString());
     }
 
     public void countReps(TextView currentSet) {
@@ -204,43 +232,43 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
             return;
         }
         String pullProgression = pullSpinner.getSelectedItem().toString();
-        int pullReps1 = Integer.parseInt(pullSet1.getText().toString());
-        int pullReps2 = Integer.parseInt(pullSet2.getText().toString());
-        int pullReps3 = Integer.parseInt(pullSet3.getText().toString());
+        int pullReps1 = getTextViewInt(pullSet1);
+        int pullReps2 = getTextViewInt(pullSet2);
+        int pullReps3 = getTextViewInt(pullSet3);
         String squatProgression = squatSpinner.getSelectedItem().toString();
-        int squatReps1 = Integer.parseInt(squatSet1.getText().toString());
-        int squatReps2 = Integer.parseInt(squatSet2.getText().toString());
-        int squatReps3 = Integer.parseInt(squatSet3.getText().toString());
+        int squatReps1 = getTextViewInt(squatSet1);
+        int squatReps2 = getTextViewInt(squatSet2);
+        int squatReps3 = getTextViewInt(squatSet3);
         String dipProgression = dipSpinner.getSelectedItem().toString();
-        int dipReps1 = Integer.parseInt(dipSet1.getText().toString());
-        int dipReps2 = Integer.parseInt(dipSet2.getText().toString());
-        int dipReps3 = Integer.parseInt(dipSet3.getText().toString());
+        int dipReps1 = getTextViewInt(dipSet1);
+        int dipReps2 = getTextViewInt(dipSet2);
+        int dipReps3 = getTextViewInt(dipSet3);
         String hingeProgression = hingeSpinner.getSelectedItem().toString();
-        int hingeReps1 = Integer.parseInt(hingeSet1.getText().toString());
-        int hingeReps2 = Integer.parseInt(hingeSet2.getText().toString());
-        int hingeReps3 = Integer.parseInt(hingeSet3.getText().toString());
+        int hingeReps1 = getTextViewInt(hingeSet1);
+        int hingeReps2 = getTextViewInt(hingeSet2);
+        int hingeReps3 = getTextViewInt(hingeSet3);
         String rowProgression = rowSpinner.getSelectedItem().toString();
-        int rowReps1 = Integer.parseInt(rowSet1.getText().toString());
-        int rowReps2 = Integer.parseInt(rowSet2.getText().toString());
-        int rowReps3 = Integer.parseInt(rowSet3.getText().toString());
+        int rowReps1 = getTextViewInt(rowSet1);
+        int rowReps2 = getTextViewInt(rowSet2);
+        int rowReps3 = getTextViewInt(rowSet3);
         String pushupProgression = pushupSpinner.getSelectedItem().toString();
-        int pushupReps1 = Integer.parseInt(pushupSet1.getText().toString());
-        int pushupReps2 = Integer.parseInt(pushupSet2.getText().toString());
-        int pushupReps3 = Integer.parseInt(pushupSet3.getText().toString());
+        int pushupReps1 = getTextViewInt(pushupSet1);
+        int pushupReps2 = getTextViewInt(pushupSet2);
+        int pushupReps3 = getTextViewInt(pushupSet3);
         String antiExtensionProgression = antiExtensionSpinner.getSelectedItem().toString();
-        int antiExtensionReps1 = Integer.parseInt(antiExtensionSet1.getText().toString());
-        int antiExtensionReps2 = Integer.parseInt(antiExtensionSet2.getText().toString());
-        int antiExtensionReps3 = Integer.parseInt(antiExtensionSet3.getText().toString());
+        int antiExtensionReps1 = getTextViewInt(antiExtensionSet1);
+        int antiExtensionReps2 = getTextViewInt(antiExtensionSet2);
+        int antiExtensionReps3 = getTextViewInt(antiExtensionSet3);
         String antiRotationProgression = "Banded pallof press";
-        int antiRotationReps1 = Integer.parseInt(antiRotationSet1.getText().toString());
-        int antiRotationReps2 = Integer.parseInt(antiRotationSet2.getText().toString());
-        int antiRotationReps3 = Integer.parseInt(antiRotationSet3.getText().toString());
+        int antiRotationReps1 = getTextViewInt(antiRotationSet1);
+        int antiRotationReps2 = getTextViewInt(antiRotationSet2);
+        int antiRotationReps3 = getTextViewInt(antiRotationSet3);
         String extensionProgression = "Reverse hyperextension";
-        int extensionReps1 = Integer.parseInt(extensionSet1.getText().toString());
-        int extensionReps2 = Integer.parseInt(extensionSet2.getText().toString());
-        int extensionReps3 = Integer.parseInt(extensionSet3.getText().toString());
+        int extensionReps1 = getTextViewInt(extensionSet1);
+        int extensionReps2 = getTextViewInt(extensionSet2);
+        int extensionReps3 = getTextViewInt(extensionSet3);
 
-        Log.d(TAG, "saveWorkout: function called");
+        Log.d(TAG, "saveWorkout: saveWorkout called...");
         Workout workout = new Workout(workoutDate,
                 bodyWeight,
                 pullProgression,
@@ -309,6 +337,98 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
 
             case R.id.pull_set_3:
                 countReps(pullSet3);
+                break;
+
+            case R.id.squat_set_1:
+                countReps(squatSet1);
+                break;
+
+            case R.id.squat_set_2:
+                countReps(squatSet2);
+                break;
+
+            case R.id.squat_set_3:
+                countReps(squatSet3);
+                break;
+
+            case R.id.dip_set_1:
+                countReps(dipSet1);
+                break;
+
+            case R.id.dip_set_2:
+                countReps(dipSet2);
+                break;
+
+            case R.id.dip_set_3:
+                countReps(dipSet3);
+                break;
+
+            case R.id.hinge_set_1:
+                countReps(hingeSet1);
+                break;
+            case R.id.hinge_set_2:
+                countReps(hingeSet2);
+                break;
+            case R.id.hinge_set_3:
+                countReps(hingeSet3);
+                break;
+
+            case R.id.row_set_1:
+                countReps(rowSet1);
+                break;
+
+            case R.id.row_set_2:
+                countReps(rowSet2);
+                break;
+            case R.id.row_set_3:
+                countReps(rowSet3);
+                break;
+
+            case R.id.pushup_set_1:
+                countReps(pushupSet1);
+                break;
+
+            case R.id.pushup_set_2:
+                countReps(pushupSet2);
+                break;
+
+            case R.id.pushup_set_3:
+                countReps(pushupSet3);
+                break;
+
+            case R.id.anti_extension_set_1:
+                countReps(antiExtensionSet1);
+                break;
+
+            case R.id.anti_extension_set_2:
+                countReps(antiExtensionSet2);
+                break;
+            case R.id.anti_extension_set_3:
+                countReps(antiExtensionSet3);
+                break;
+
+            case R.id.anti_rotation_set_1:
+                countReps(antiRotationSet1);
+                break;
+
+            case R.id.anti_rotation_set_2:
+                countReps(antiRotationSet2);
+                break;
+
+            case R.id.anti_rotation_set_3:
+                countReps(antiRotationSet3);
+                break;
+
+            case R.id.extension_set_1:
+                countReps(extensionSet1);
+                break;
+
+            case R.id.extension_set_2:
+                countReps(extensionSet2);
+                break;
+
+            case R.id.extension_set_3:
+                countReps(extensionSet3);
                 break;
         }
     }
