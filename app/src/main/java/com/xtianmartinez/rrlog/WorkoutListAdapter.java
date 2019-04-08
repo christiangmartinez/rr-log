@@ -47,7 +47,7 @@ public class WorkoutListAdapter extends RecyclerView.Adapter<WorkoutListAdapter.
         } else {
             holder.itemDate.setText("No date found");
             holder.itemBodyWeight.setText("No body weight found");
-            holder.itemPullProgression.setText("No pull progression found");
+            holder.itemPullProgression.setText("No pull progression found");t b
         }
     }
 
