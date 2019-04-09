@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+
 import com.xtianmartinez.rrlog.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -49,4 +51,5 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 }
             };
+
 }
