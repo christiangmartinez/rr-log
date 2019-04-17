@@ -108,6 +108,7 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
         ArrayAdapter<CharSequence> pullAdapter = ArrayAdapter.createFromResource(this.getActivity(), R.array.pull_array, android.R.layout.simple_spinner_item);
         pullAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         pullSpinner.setAdapter(pullAdapter);
+        pullSpinner.setOnItemSelectedListener(this);
         pullSet1 = v.findViewById(R.id.pull_set_1);
         pullSet1.setOnClickListener(this);
         pullSet2 = v.findViewById(R.id.pull_set_2);
@@ -312,7 +313,14 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
+        switch (adapterView.getId()) {
+            case R.id.pull_progressions:
+                switch (i) {
+                    case 4:
+                    Toast.makeText(getActivity(), "Weighted exercise selected", Toast.LENGTH_LONG).show();
+                    break;
+                }
+        }
     }
 
     @Override
