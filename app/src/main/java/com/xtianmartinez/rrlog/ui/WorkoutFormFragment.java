@@ -34,6 +34,7 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
     private TextView currentDate;
     private EditText userWeight;
     private Spinner pullSpinner;
+    private EditText pullWeight;
     private TextView pullSet1;
     private TextView pullSet2;
     private TextView pullSet3;
@@ -109,6 +110,7 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
         pullAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         pullSpinner.setAdapter(pullAdapter);
         pullSpinner.setOnItemSelectedListener(this);
+        pullWeight = v.findViewById(R.id.pull_weight);
         pullSet1 = v.findViewById(R.id.pull_set_1);
         pullSet1.setOnClickListener(this);
         pullSet2 = v.findViewById(R.id.pull_set_2);
@@ -318,6 +320,7 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
                 switch (i) {
                     case 4:
                     Toast.makeText(getActivity(), "Weighted exercise selected", Toast.LENGTH_LONG).show();
+                    pullWeight.setVisibility(View.VISIBLE);
                     break;
                 }
         }

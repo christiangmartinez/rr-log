@@ -96,6 +96,17 @@
                         android:layout_marginStart="18dp"
                         android:layout_marginTop="30dp" />
 
+                    <EditText
+                        android:id="@+id/pull_weight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/body_weight_label"
+                        android:layout_toEndOf="@+id/pull_progressions"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginStart="20dp"
+                        android:hint="@string/sample_weight"
+                        android:visibility="invisible"/>
+
                     <TextView
                         android:id="@+id/pull_set_1"
                         android:layout_width="wrap_content"
