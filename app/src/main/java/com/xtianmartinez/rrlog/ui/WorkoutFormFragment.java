@@ -317,12 +317,12 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         switch (adapterView.getId()) {
             case R.id.pull_progressions:
-                switch (i) {
-                    case 4:
-                    Toast.makeText(getActivity(), "Weighted exercise selected", Toast.LENGTH_LONG).show();
-                    pullWeight.setVisibility(View.VISIBLE);
-                    break;
-                }
+               if (i == 4) {
+                   pullWeight.setVisibility(View.VISIBLE);
+               } else {
+                   pullWeight.setVisibility(View.GONE);
+               }
+               break;
         }
     }
 
