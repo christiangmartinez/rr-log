@@ -90,7 +90,7 @@
                     <!--First pair-->
                     <Spinner
                         android:id="@+id/pull_progressions"
-                        android:layout_width="wrap_content"
+                        android:layout_width="200dp"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/body_weight_label"
                         android:layout_marginStart="18dp"
@@ -101,11 +101,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/body_weight_label"
+                        android:layout_marginStart="45dp"
+                        android:layout_marginTop="15dp"
                         android:layout_toEndOf="@+id/pull_progressions"
-                        android:layout_marginTop="18dp"
-                        android:layout_marginStart="20dp"
                         android:hint="@string/sample_weight"
-                        android:visibility="invisible"/>
+                        android:inputType="number"
+                        android:visibility="invisible" />
 
                     <TextView
                         android:id="@+id/pull_set_1"
@@ -150,11 +151,35 @@
 
                     <Spinner
                         android:id="@+id/squat_progressions"
-                        android:layout_width="wrap_content"
+                        android:layout_width="200dp"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/pull_set_1"
                         android:layout_marginStart="18dp"
                         android:layout_marginTop="75dp" />
+
+                    <EditText
+                        android:id="@+id/shrimp_squat_weight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/pull_set_1"
+                        android:layout_marginStart="45dp"
+                        android:layout_marginTop="60dp"
+                        android:layout_toEndOf="@+id/squat_progressions"
+                        android:hint="@string/sample_weight"
+                        android:inputType="number"
+                        android:visibility="invisible" />
+
+                    <EditText
+                        android:id="@+id/barbell_squat_weight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/pull_set_1"
+                        android:layout_marginStart="45dp"
+                        android:layout_marginTop="60dp"
+                        android:layout_toEndOf="@+id/squat_progressions"
+                        android:hint="@string/sample_weight"
+                        android:inputType="number"
+                        android:visibility="invisible" />
 
                     <TextView
                         android:id="@+id/squat_set_1"
@@ -211,10 +236,21 @@
                     <!--Second pair-->
                     <Spinner
                         android:id="@+id/dip_progressions"
-                        android:layout_width="wrap_content"
+                        android:layout_width="200dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="18dp"
                         android:layout_marginTop="70dp" />
+
+                    <EditText
+                        android:id="@+id/dip_weight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="55dp"
+                        android:layout_marginStart="45dp"
+                        android:layout_toEndOf="@+id/dip_progressions"
+                        android:hint="@string/sample_weight"
+                        android:inputType="number"
+                        android:visibility="invisible"/>
 
                     <TextView
                         android:id="@+id/dip_set_1"
@@ -259,11 +295,23 @@
 
                     <Spinner
                         android:id="@+id/hinge_progressions"
-                        android:layout_width="wrap_content"
+                        android:layout_width="200dp"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/dip_set_1"
                         android:layout_marginStart="18dp"
                         android:layout_marginTop="75dp" />
+
+                    <EditText
+                        android:id="@+id/hinge_weight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="60dp"
+                        android:layout_marginStart="45dp"
+                        android:layout_below="@+id/dip_set_1"
+                        android:layout_toEndOf="@+id/hinge_progressions"
+                        android:hint="@string/sample_weight"
+                        android:inputType="number"
+                        android:visibility="invisible"/>
 
                     <TextView
                         android:id="@+id/hinge_set_1"
@@ -322,10 +370,21 @@
                     <!--Third pair-->
                     <Spinner
                         android:id="@+id/row_progressions"
-                        android:layout_width="wrap_content"
+                        android:layout_width="200dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="18dp"
                         android:layout_marginTop="70dp" />
+
+                    <EditText
+                        android:id="@+id/row_weight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="55dp"
+                        android:layout_marginStart="45dp"
+                        android:layout_toEndOf="@+id/row_progressions"
+                        android:hint="@string/sample_weight"
+                        android:inputType="number"
+                        android:visibility="invisible"/>
 
                     <TextView
                         android:id="@+id/row_set_1"
@@ -370,7 +429,7 @@
 
                     <Spinner
                         android:id="@+id/pushup_progressions"
-                        android:layout_width="wrap_content"
+                        android:layout_width="200dp"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/row_set_1"
                         android:layout_marginTop="75dp"

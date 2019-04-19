@@ -40,21 +40,26 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
     private TextView pullSet3;
 
     private Spinner squatSpinner;
+    private EditText shrimpSquatWeight;
+    private EditText barbellSquatWeight;
     private TextView squatSet1;
     private TextView squatSet2;
     private TextView squatSet3;
 
     private Spinner dipSpinner;
+    private EditText dipWeight;
     private TextView dipSet1;
     private TextView dipSet2;
     private TextView dipSet3;
 
     private Spinner hingeSpinner;
+    private EditText hingeWeight;
     private TextView hingeSet1;
     private TextView hingeSet2;
     private TextView hingeSet3;
 
     private Spinner rowSpinner;
+    private EditText rowWeight;
     private TextView rowSet1;
     private TextView rowSet2;
     private TextView rowSet3;
@@ -123,6 +128,8 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
         squatAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         squatSpinner.setAdapter(squatAdapter);
         squatSpinner.setOnItemSelectedListener(this);
+        shrimpSquatWeight = v.findViewById(R.id.shrimp_squat_weight);
+        barbellSquatWeight = v.findViewById(R.id.barbell_squat_weight);
         squatSet1 = v.findViewById(R.id.squat_set_1);
         squatSet1.setOnClickListener(this);
         squatSet2 = v.findViewById(R.id.squat_set_2);
@@ -136,6 +143,7 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
         dipAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         dipSpinner.setAdapter(dipAdapter);
         dipSpinner.setOnItemSelectedListener(this);
+        dipWeight = v.findViewById(R.id.dip_weight);
         dipSet1 = v.findViewById(R.id.dip_set_1);
         dipSet1.setOnClickListener(this);
         dipSet2 = v.findViewById(R.id.dip_set_2);
@@ -148,6 +156,7 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
         hingeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         hingeSpinner.setAdapter(hingeAdapter);
         hingeSpinner.setOnItemSelectedListener(this);
+        hingeWeight = v.findViewById(R.id.hinge_weight);
         hingeSet1 = v.findViewById(R.id.hinge_set_1);
         hingeSet1.setOnClickListener(this);
         hingeSet2 = v.findViewById(R.id.hinge_set_2);
@@ -161,6 +170,7 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
         rowAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         rowSpinner.setAdapter(rowAdapter);
         rowSpinner.setOnItemSelectedListener(this);
+        rowWeight = v.findViewById(R.id.row_weight);
         rowSet1 = v.findViewById(R.id.row_set_1);
         rowSet1.setOnClickListener(this);
         rowSet2 = v.findViewById(R.id.row_set_2);
@@ -323,6 +333,42 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
                    pullWeight.setVisibility(View.GONE);
                }
                break;
+            case R.id.squat_progressions:
+                if (i == 5) {
+                    shrimpSquatWeight.setVisibility(View.VISIBLE);
+                    barbellSquatWeight.setVisibility(View.GONE);
+                } else if (i == 6) {
+                    barbellSquatWeight.setVisibility(View.VISIBLE);
+                    shrimpSquatWeight.setVisibility(View.GONE);
+                } else {
+                    shrimpSquatWeight.setVisibility(View.GONE);
+                    barbellSquatWeight.setVisibility(View.GONE);
+                }
+                break;
+
+            case R.id.dip_progressions:
+                if (i == 3) {
+                    dipWeight.setVisibility(View.VISIBLE);
+                } else {
+                    dipWeight.setVisibility(View.GONE);
+                }
+                break;
+
+            case R.id.hinge_progressions:
+                if (i == 5) {
+                    hingeWeight.setVisibility(View.VISIBLE);
+                } else {
+                    hingeWeight.setVisibility(View.GONE);
+                }
+                break;
+
+            case R.id.row_progressions:
+                if (i == 4) {
+                    rowWeight.setVisibility(View.VISIBLE);
+                } else {
+                    rowWeight.setVisibility(View.GONE);
+                }
+                break;
         }
     }
 
