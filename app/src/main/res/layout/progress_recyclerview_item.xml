@@ -25,14 +25,26 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/current_date"
-                android:textSize="15sp"/>
+                android:textSize="18sp"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:id="@+id/bodyWeightLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/progressDate"
+                android:text="@string/body_weight"
+                android:textSize="14sp"/>
+
             <TextView
                 android:id="@+id/bodyWeight"
                 android:layout_below="@id/progressDate"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/sample_weight"
-                android:textSize="15sp" />
+                android:textSize="14sp"
+                android:layout_toEndOf="@+id/bodyWeightLabel"
+                android:layout_marginStart="5dp"/>
 
 <!--First pair: Pull-ups and Squats-->
             <TextView
@@ -41,7 +53,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/progress"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:layout_marginTop="20dp"/>
             <TextView
                 android:id="@+id/pullReps1"
@@ -49,7 +61,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/rep_hint"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:layout_marginStart="20dp"/>
             <TextView
                 android:id="@+id/pullReps2"
@@ -58,7 +70,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/rep_hint"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:layout_marginStart="20dp"/>
             <TextView
                 android:id="@+id/pullReps3"
@@ -67,7 +79,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/rep_hint"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:layout_marginStart="20dp"/>
 
             <TextView
@@ -76,7 +88,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/progress"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:layout_marginTop="5dp"/>
             <TextView
                 android:id="@+id/squatReps1"
@@ -84,7 +96,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/rep_hint"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:layout_marginStart="20dp"/>
             <TextView
                 android:id="@+id/squatReps2"
@@ -93,7 +105,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/rep_hint"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:layout_marginStart="20dp"/>
             <TextView
                 android:id="@+id/squatReps3"
@@ -102,7 +114,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/rep_hint"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:layout_marginStart="20dp"/>
 
 <!--Second Pair: Dips and Hinge-->
@@ -112,7 +124,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/progress"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:layout_marginTop="20dp"/>
             <TextView
                 android:id="@+id/dipReps1"
@@ -120,7 +132,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/rep_hint"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:layout_marginStart="20dp"/>
             <TextView
                 android:id="@+id/dipReps2"
@@ -129,7 +141,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/rep_hint"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:layout_marginStart="20dp"/>
             <TextView
                 android:id="@+id/dipReps3"
@@ -138,7 +150,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/rep_hint"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:layout_marginStart="20dp"/>
 
             <TextView
@@ -147,7 +159,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/progress"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:layout_marginTop="5dp"/>
             <TextView
                 android:id="@+id/hingeReps1"
@@ -155,7 +167,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/rep_hint"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:layout_marginStart="20dp"/>
             <TextView
                 android:id="@+id/hingeReps2"
@@ -164,7 +176,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/rep_hint"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:layout_marginStart="20dp"/>
             <TextView
                 android:id="@+id/hingeReps3"
@@ -173,7 +185,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/rep_hint"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:layout_marginStart="20dp"/>
 
 <!--Third Pair: Rows and Push-ups -->
@@ -183,7 +195,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/progress"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:layout_marginTop="20dp"/>
             <TextView
                 android:id="@+id/rowReps1"
@@ -191,7 +203,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/rep_hint"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:layout_marginStart="20dp"/>
             <TextView
                 android:id="@+id/rowReps2"
@@ -200,7 +212,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/rep_hint"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:layout_marginStart="20dp"/>
             <TextView
                 android:id="@+id/rowReps3"
@@ -209,7 +221,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/rep_hint"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:layout_marginStart="20dp"/>
 
             <TextView
@@ -218,7 +230,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/progress"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:layout_marginTop="5dp"/>
             <TextView
                 android:id="@+id/pushupReps1"
@@ -226,7 +238,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/rep_hint"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:layout_marginStart="20dp"/>
             <TextView
                 android:id="@+id/pushupReps2"
@@ -235,7 +247,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/rep_hint"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:layout_marginStart="20dp"/>
             <TextView
                 android:id="@+id/pushupReps3"
@@ -244,7 +256,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/rep_hint"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:layout_marginStart="20dp"/>
 
 <!--Core Triplet-->
@@ -254,7 +266,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/progress"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:layout_marginTop="20dp"/>
             <TextView
                 android:id="@+id/antiExtensionReps1"
@@ -262,7 +274,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/rep_hint"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:layout_marginStart="20dp"/>
             <TextView
                 android:id="@+id/antiExtensionReps2"
@@ -271,7 +283,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/rep_hint"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:layout_marginStart="20dp"/>
             <TextView
                 android:id="@+id/antiExtensionReps3"
@@ -280,7 +292,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/rep_hint"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:layout_marginStart="20dp"/>
 
             <TextView
@@ -289,7 +301,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/progress"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:layout_marginTop="5dp"/>
             <TextView
                 android:id="@+id/antiRotationReps1"
@@ -297,7 +309,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/rep_hint"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:layout_marginStart="20dp"/>
             <TextView
                 android:id="@+id/antiRotationReps2"
@@ -306,7 +318,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/rep_hint"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:layout_marginStart="20dp"/>
             <TextView
                 android:id="@+id/antiRotationReps3"
@@ -315,7 +327,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/rep_hint"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:layout_marginStart="20dp"/>
 
             <TextView
@@ -324,7 +336,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/progress"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:layout_marginTop="5dp"/>
             <TextView
                 android:id="@+id/extensionReps1"
@@ -332,7 +344,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/rep_hint"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:layout_marginStart="20dp"/>
             <TextView
                 android:id="@+id/extensionReps2"
@@ -341,7 +353,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/rep_hint"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:layout_marginStart="20dp"/>
             <TextView
                 android:id="@+id/extensionReps3"
@@ -350,7 +362,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/rep_hint"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:layout_marginStart="20dp"/>
 
             <TextView
@@ -360,7 +372,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_marginEnd="35dp"
                 android:text="Edit"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:textColor="@color/colorPrimary"/>
 
         </RelativeLayout>

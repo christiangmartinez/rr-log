@@ -321,6 +321,7 @@ public class WorkoutFormFragment extends Fragment implements AdapterView.OnItemS
                 extensionReps2,
                 extensionReps3);
         workoutViewModel.insert(workout);
+        Toast.makeText(getActivity(), "Workout saved", Toast.LENGTH_SHORT).show();
     }
 
     @Override
