@@ -42,7 +42,7 @@
         <item>Barbell deadlift</item>
     </string-array>
     <string-array name="row_array">
-       <item>Vertical rows</item>
+        <item>Vertical rows</item>
         <item>Incline rows</item>
         <item>Horizontal rows</item>
         <item>Wide rows</item>
@@ -61,4 +61,7 @@
     </string-array>
     <string name="anti_rotation">Banded pallof press</string>
     <string name="extension">Reverse hyperextension</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
